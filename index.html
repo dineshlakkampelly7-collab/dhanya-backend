@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhanya Global Exports</title>
+
+<style>
+body {font-family: Arial; margin:0;}
+nav {background:#1f5f2c;color:white;padding:15px;text-align:center;}
+section {padding:40px;text-align:center;}
+input, textarea {padding:10px;margin:10px;width:250px;}
+button {padding:10px 20px;background:#d4af37;color:white;border:none;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Dhanya Global Exports</h2>
+</nav>
+
+<section>
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+<input type="text" id="name" placeholder="Name" required><br>
+<input type="email" id="email" placeholder="Email" required><br>
+<textarea id="message" placeholder="Your Requirement" required></textarea><br>
+<button type="submit">Send Inquiry</button>
+</form>
+
+<p id="status"></p>
+</section>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const res = await fetch("http://localhost:5000/send", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      name:document.getElementById("name").value,
+      email:document.getElementById("email").value,
+      message:document.getElementById("message").value
+    })
+  });
+
+  const data = await res.json();
+  document.getElementById("status").innerText = data.message;
+});
+</script>
+
+</body>
+</html>
