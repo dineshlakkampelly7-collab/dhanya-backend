@@ -7,15 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Test route
 app.get("/", (req, res) => {
   res.send("Server running...");
 });
 
-// Send email route
 app.post("/send", async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -30,12 +27,11 @@ app.post("/send", async (req, res) => {
     res.json({ message: "Email sent successfully ✅" });
 
   } catch (error) {
-    console.log("ERROR:", error);
+    console.log(error);
     res.json({ message: "Error sending email ❌" });
   }
 });
 
-// Start server
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server running...");
 });
