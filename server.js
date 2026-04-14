@@ -1,38 +1,54 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-app.post("/send", async (req, res) => {
-  const { name, email, message } = req.body;
+// Test route (optional)
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
+// Email route
+app.post("/send", async (req, res) => {
   try {
+    const { name, email, message } = req.body;
+
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // IMPORTANT for Render
       auth: {
         user: process.env.EMAIL,
-        pass: process.env.PASS,
-      },
+        pass: process.env.PASS
+      }
     });
 
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: "New Inquiry from Website",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      subject: "New Inquiry - Dhanya Global Exports",
+      text: `
+Name: ${name}
+Email: ${email}
+Message: ${message}
+`
     });
 
     res.json({ message: "Email sent successfully ✅" });
+
   } catch (error) {
-    console.log(error);
+    console.log("ERROR:", error);
     res.json({ message: "Error sending email ❌" });
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
