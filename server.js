@@ -4,24 +4,23 @@ const cors = require("cors");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test route (optional)
+// test route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("Server running...");
 });
 
-// Email route
+// email route
 app.post("/send", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      service: "gmail",
       port: 587,
-      secure: false, // IMPORTANT for Render
+      secure: false,
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASS
@@ -31,23 +30,18 @@ app.post("/send", async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: "New Inquiry - Dhanya Global Exports",
-      text: `
-Name: ${name}
-Email: ${email}
-Message: ${message}
-`
+      subject: "New Inquiry",
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
 
     res.json({ message: "Email sent successfully ✅" });
 
-  } catch (error) {
-    console.log("ERROR:", error);
+  } catch (err) {
+    console.log("MAIL ERROR:", err);
     res.json({ message: "Error sending email ❌" });
   }
 });
 
-// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
