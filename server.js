@@ -1,39 +1,28 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
 const cors = require("cors");
+const { Resend } = require("resend");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 // Test route
 app.get("/", (req, res) => {
-  res.send("Server is running...");
+  res.send("Server running...");
 });
 
-// Email route
+// Send email route
 app.post("/send", async (req, res) => {
   try {
-    console.log("ENV EMAIL:", process.env.EMAIL);
-    console.log("ENV PASS:", process.env.PASS ? "EXISTS" : "MISSING");
-
     const { name, email, message } = req.body;
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,   // IMPORTANT: do NOT change
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASS
-      }
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "dinesh.dinnu2010@gmail.com",
       subject: "New Inquiry - Dhanya Global Exports",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
@@ -47,7 +36,6 @@ app.post("/send", async (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
+app.listen(process.env.PORT || 5000, () => {
+  console.log("Server running...");
 });
