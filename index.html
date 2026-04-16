@@ -1,3 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Verification -->
+<meta name="google-site-verification" content="FGmCSFKwjxHJWji1ive7J7_DPX4VMx4hhTGtBbMRVm8" />
+
+<title>Dhanya Global Exports</title>
+
+<style>
+body {font-family: Arial; margin:0; line-height:1.6;}
+nav {background:#1f5f2c;color:white;padding:15px;text-align:center;}
+.hero {background:#eaf4ea;padding:60px;text-align:center;}
+.hero h1 {font-size:32px;margin-bottom:10px;}
+section {padding:40px;text-align:center;}
+.products {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.card {border:1px solid #ddd;padding:20px;width:250px;border-radius:10px;}
+input, textarea {padding:10px;margin:10px;width:250px;}
+button {padding:10px 20px;background:#d4af37;color:white;border:none;cursor:pointer;}
+footer {background:#1f5f2c;color:white;padding:20px;text-align:center;margin-top:40px;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Dhanya Global Exports</h2>
+</nav>
+
+<div class="hero">
+<h1>Exporting Quality Agricultural Products Worldwide</h1>
+<p>Trusted supplier of Non-Basmati Rice, Maize, and Millets from India</p>
+</div>
+
+<section>
+<h2>About Us</h2>
+<p>
+Dhanya Global Exports is a trusted exporter based in Northern Telangana, India.
+We specialize in delivering high-quality agricultural products to global markets
+with reliability, consistency, and competitive pricing.
+</p>
+</section>
+
+<section>
+<h2>Our Products</h2>
+<div class="products">
+
+<div class="card">
+<h3>Non-Basmati Rice</h3>
+<p>High-quality rice suitable for bulk export.</p>
+</div>
+
+<div class="card">
+<h3>Maize</h3>
+<p>Premium maize with excellent grain quality.</p>
+</div>
+
+<div class="card">
+<h3>Millets</h3>
+<p>Nutrient-rich millets for global markets.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+<input type="text" id="name" placeholder="Name" required><br>
+<input type="email" id="email" placeholder="Email" required><br>
+<textarea id="message" placeholder="Your Requirement" required></textarea><br>
+<button type="submit">Send Inquiry</button>
+</form>
+
+<p id="status"></p>
+</section>
+
+<footer>
+<p>© 2026 Dhanya Global Exports</p>
+</footer>
+
+<!-- WhatsApp Button -->
 <a href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
    target="_blank"
    style="
@@ -11,7 +96,35 @@
    font-size:22px;
    text-decoration:none;
    box-shadow:0 4px 10px rgba(0,0,0,0.3);
-   z-index:1000;
-   ">
+   z-index:1000;">
    💬
 </a>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  document.getElementById("status").innerText = "Sending...";
+
+  try {
+    const res = await fetch("https://dhanya-api.onrender.com/send", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        message:document.getElementById("message").value
+      })
+    });
+
+    const data = await res.json();
+    document.getElementById("status").innerText = data.message;
+
+  } catch (error) {
+    document.getElementById("status").innerText = "Error sending ❌";
+  }
+});
+</script>
+
+</body>
+</html>
