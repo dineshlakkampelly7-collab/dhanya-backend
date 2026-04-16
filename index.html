@@ -4,42 +4,119 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Verification -->
 <meta name="google-site-verification" content="FGmCSFKwjxHJWji1ive7J7_DPX4VMx4hhTGtBbMRVm8" />
 
 <title>Dhanya Global Exports</title>
 
 <style>
-body {font-family: Arial; margin:0; line-height:1.6;}
-nav {background:#1f5f2c;color:white;padding:15px;text-align:center;}
-.hero {background:#eaf4ea;padding:60px;text-align:center;}
-.hero h1 {font-size:32px;margin-bottom:10px;}
-section {padding:40px;text-align:center;}
-.products {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.card {border:1px solid #ddd;padding:20px;width:250px;border-radius:10px;}
-input, textarea {padding:10px;margin:10px;width:250px;}
-button {padding:10px 20px;background:#d4af37;color:white;border:none;cursor:pointer;}
-footer {background:#1f5f2c;color:white;padding:20px;text-align:center;margin-top:40px;}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background: #1f5f2c;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #1f5f2c, #3b8d4f);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* SECTION */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* CONTACT */
+input, textarea {
+  padding: 12px;
+  margin: 10px;
+  width: 260px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px 25px;
+  background: #d4af37;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #b8962e;
+}
+
+/* FOOTER */
+footer {
+  background: #1f5f2c;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>Dhanya Global Exports</h2>
-</nav>
+<nav>Dhanya Global Exports</nav>
 
 <div class="hero">
 <h1>Exporting Quality Agricultural Products Worldwide</h1>
-<p>Trusted supplier of Non-Basmati Rice, Maize, and Millets from India</p>
+<p>Trusted Supplier of Rice, Maize & Millets from India</p>
 </div>
 
 <section>
 <h2>About Us</h2>
 <p>
-Dhanya Global Exports is a trusted exporter based in Northern Telangana, India.
-We specialize in delivering high-quality agricultural products to global markets
-with reliability, consistency, and competitive pricing.
+We are a reliable agricultural export company based in Northern Telangana, India.
+We supply premium quality products globally with consistency and trust.
 </p>
 </section>
 
@@ -49,12 +126,12 @@ with reliability, consistency, and competitive pricing.
 
 <div class="card">
 <h3>Non-Basmati Rice</h3>
-<p>High-quality rice suitable for bulk export.</p>
+<p>High-quality export grade rice.</p>
 </div>
 
 <div class="card">
 <h3>Maize</h3>
-<p>Premium maize with excellent grain quality.</p>
+<p>Premium quality maize for bulk supply.</p>
 </div>
 
 <div class="card">
@@ -85,25 +162,13 @@ with reliability, consistency, and competitive pricing.
 <!-- WhatsApp Button -->
 <a href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
    target="_blank"
-   style="
-   position:fixed;
-   bottom:20px;
-   right:20px;
-   background:#25D366;
-   color:white;
-   padding:15px;
-   border-radius:50%;
-   font-size:22px;
-   text-decoration:none;
-   box-shadow:0 4px 10px rgba(0,0,0,0.3);
-   z-index:1000;">
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%; font-size:22px; text-decoration:none;">
    💬
 </a>
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e){
   e.preventDefault();
-
   document.getElementById("status").innerText = "Sending...";
 
   try {
