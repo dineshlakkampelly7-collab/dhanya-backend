@@ -16,43 +16,37 @@ body {
   color: #333;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   background: #1f5f2c;
   color: white;
-  padding: 18px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* HERO */
+nav img {
+  width: 40px;
+}
+
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
               url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
   background-size: cover;
-  background-position: center;
   color: white;
   padding: 100px 20px;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 42px;
-  font-weight: bold;
-}
+.hero h1 { font-size: 42px; }
 
-.hero p {
-  font-size: 20px;
-}
-
-/* SECTION */
 section {
   padding: 60px 20px;
   text-align: center;
 }
 
-/* PRODUCTS */
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -66,19 +60,20 @@ section {
   width: 260px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  text-align: left;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .card img {
+  width: 100%;
   border-radius: 10px;
 }
 
-/* FORM */
+.details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 input, textarea {
   padding: 12px;
   margin: 10px;
@@ -93,37 +88,33 @@ button {
   color: white;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
 }
 
-button:hover {
-  background: #b8962e;
-}
-
-/* FOOTER */
 footer {
   background: #1f5f2c;
   color: white;
   padding: 25px;
-  text-align: center;
 }
 </style>
 </head>
 
 <body>
 
-<nav>Dhanya Global Exports</nav>
+<nav>
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909760.png">
+<h2>Dhanya Global Exports</h2>
+</nav>
 
 <div class="hero">
 <h1>Exporting Quality Agricultural Products Worldwide</h1>
-<p>Trusted Supplier of Rice, Maize & Millets from India</p>
+<p>Direct Procurement from Farmers | Bulk Supply | Global Export</p>
 </div>
 
 <section>
-<h2>About Us</h2>
+<h2>Why Choose Us</h2>
 <p>
-We are a reliable agricultural export company based in Northern Telangana, India.
-We supply premium quality products globally with consistency and trust.
+We procure directly from local farmers, ensuring better quality and pricing.
+Buyers can book crops in advance before harvest, guaranteeing supply and transparency.
 </p>
 </section>
 
@@ -131,22 +122,34 @@ We supply premium quality products globally with consistency and trust.
 <h2>Our Products</h2>
 <div class="products">
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg" width="100%">
+<div class="card" onclick="toggleDetails(this)">
+<img src="https://source.unsplash.com/300x200/?rice">
 <h3>Non-Basmati Rice</h3>
-<p>High-quality export grade rice.</p>
+<div class="details">
+Grain Type: Medium & Long grain<br>
+Moisture: 12–14%<br>
+Export Quality | Bulk supply available
+</div>
 </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg" width="100%">
+<div class="card" onclick="toggleDetails(this)">
+<img src="https://source.unsplash.com/300x200/?corn">
 <h3>Maize</h3>
-<p>Premium quality maize for bulk supply.</p>
+<div class="details">
+Yellow maize | High starch content<br>
+Moisture: 13–15%<br>
+Ideal for feed & industrial use
+</div>
 </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Millet.jpg" width="100%">
+<div class="card" onclick="toggleDetails(this)">
+<img src="https://source.unsplash.com/300x200/?millets">
 <h3>Millets</h3>
-<p>Nutrient-rich millets for global markets.</p>
+<div class="details">
+Rich in nutrients & fiber<br>
+Organic sourcing available<br>
+Suitable for health markets
+</div>
 </div>
 
 </div>
@@ -169,14 +172,18 @@ We supply premium quality products globally with consistency and trust.
 <p>© 2026 Dhanya Global Exports</p>
 </footer>
 
-<!-- WhatsApp Button -->
+<!-- WhatsApp -->
 <a href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
    target="_blank"
-   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%; font-size:22px; text-decoration:none;">
-   💬
-</a>
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%;">
+💬</a>
 
 <script>
+function toggleDetails(card){
+  let details = card.querySelector(".details");
+  details.style.display = details.style.display === "block" ? "none" : "block";
+}
+
 document.getElementById("contactForm").addEventListener("submit", async function(e){
   e.preventDefault();
   document.getElementById("status").innerText = "Sending...";
@@ -195,8 +202,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const data = await res.json();
     document.getElementById("status").innerText = data.message;
 
-  } catch (error) {
-    document.getElementById("status").innerText = "Error sending ❌";
+  } catch {
+    document.getElementById("status").innerText = "Error ❌";
   }
 });
 </script>
