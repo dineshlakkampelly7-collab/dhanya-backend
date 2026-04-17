@@ -3,210 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="FGmCSFKwjxHJWji1ive7J7_DPX4VMx4hhTGtBbMRVm8" />
-
 <title>Dhanya Global Exports</title>
 
 <style>
 body {
+  margin:0;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: #f9f9f9;
-  color: #333;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
-  background: #1f5f2c;
-  color: white;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  background:#1f5f2c;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
 }
 
-nav img {
-  width: 40px;
+nav h2 {
+  margin:0;
 }
 
+nav ul {
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav ul li {
+  cursor:pointer;
+}
+
+.btn {
+  background:#d4af37;
+  padding:10px 20px;
+  border-radius:5px;
+  color:white;
+}
+
+/* HERO */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
-  background-size: cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
+  height:450px;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+  background-size:cover;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero h1 { font-size: 42px; }
+.hero h1 {
+  font-size:40px;
+  margin:0;
+}
 
+.hero p {
+  margin:10px 0;
+}
+
+.hero button {
+  margin-top:15px;
+  padding:12px 25px;
+  background:#d4af37;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* SECTION */
 section {
-  padding: 60px 20px;
-  text-align: center;
+  padding:40px;
+  text-align:center;
+  background:#f2f2f2;
 }
 
+/* CARDS */
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  width: 260px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  cursor: pointer;
+  background:white;
+  width:300px;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
+.images {
+  display:flex;
+  gap:5px;
 }
 
-.details {
-  display: none;
-  margin-top: 10px;
-  font-size: 14px;
+.images img {
+  width:30%;
+  border-radius:5px;
 }
 
-input, textarea {
-  padding: 12px;
-  margin: 10px;
-  width: 260px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* ADVANTAGE */
+.advantage {
+  background:#eee;
+  padding:30px;
 }
 
-button {
-  padding: 12px 25px;
-  background: #d4af37;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.adv-grid {
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
 }
 
+/* FOOTER */
 footer {
-  background: #1f5f2c;
-  color: white;
-  padding: 25px;
+  background:#222;
+  color:white;
+  padding:30px;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-<img src="https://cdn-icons-png.flaticon.com/512/2909/2909760.png">
-<h2>Dhanya Global Exports</h2>
+  <h2>DHANYA</h2>
+  <ul>
+    <li>HOME</li>
+    <li>OUR PRODUCE</li>
+    <li>PROCESS</li>
+    <li>CERTIFICATIONS</li>
+    <li>CONTACT</li>
+  </ul>
+  <div class="btn">REQUEST QUOTE</div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Exporting Quality Agricultural Products Worldwide</h1>
-<p>Direct Procurement from Farmers | Bulk Supply | Global Export</p>
+  <h1>DIRECTLY SOURCED.<br>GLOBALLY DELIVERED.</h1>
+  <p>Your Trusted Partner for Premium Sona Masoori Rice & Yellow Maize</p>
+  <button>EXPLORE OUR PRODUCTS</button>
 </div>
 
+<!-- PRODUCE -->
 <section>
-<h2>Why Choose Us</h2>
-<p>
-We procure directly from local farmers, ensuring better quality and pricing.
-Buyers can book crops in advance before harvest, guaranteeing supply and transparency.
-</p>
-</section>
+<h2>OUR PRODUCE</h2>
 
-<section>
-<h2>Our Products</h2>
 <div class="products">
 
-<div class="card" onclick="toggleDetails(this)">
-<img src="https://source.unsplash.com/300x200/?rice">
-<h3>Non-Basmati Rice</h3>
-<div class="details">
-Grain Type: Medium & Long grain<br>
-Moisture: 12–14%<br>
-Export Quality | Bulk supply available
-</div>
+<div class="card">
+<h3>SONA MASOORI RICE</h3>
+<p>Premium aged grains, lightweight & aromatic</p>
+
+<div class="images">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Rice.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Rice_bag.jpg">
 </div>
 
-<div class="card" onclick="toggleDetails(this)">
-<img src="https://source.unsplash.com/300x200/?corn">
-<h3>Maize</h3>
-<div class="details">
-Yellow maize | High starch content<br>
-Moisture: 13–15%<br>
-Ideal for feed & industrial use
-</div>
 </div>
 
-<div class="card" onclick="toggleDetails(this)">
-<img src="https://source.unsplash.com/300x200/?millets">
-<h3>Millets</h3>
-<div class="details">
-Rich in nutrients & fiber<br>
-Organic sourcing available<br>
-Suitable for health markets
+<div class="card">
+<h3>DRIED YELLOW MAIZE</h3>
+<p>High energy feed, carefully dried</p>
+
+<div class="images">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Corn.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Maize_bag.jpg">
 </div>
+
 </div>
 
 </div>
 </section>
 
-<section>
-<h2>Contact Us</h2>
+<!-- ADVANTAGE -->
+<div class="advantage">
+<h2>THE DHANYA ADVANTAGE</h2>
 
-<form id="contactForm">
-<input type="text" id="name" placeholder="Name" required><br>
-<input type="email" id="email" placeholder="Email" required><br>
-<textarea id="message" placeholder="Your Requirement" required></textarea><br>
-<button type="submit">Send Inquiry</button>
-</form>
+<div class="adv-grid">
+<p>✔ Direct from Farmer</p>
+<p>✔ Advance Booking</p>
+<p>✔ Quality Assured</p>
+<p>✔ Global Logistics</p>
+</div>
+</div>
 
-<p id="status"></p>
-</section>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Dhanya Global Exports</p>
+
+<div>
+<h3>Contact</h3>
+<p>+91 6309281897</p>
+<p>dhanyaglobalexports</p>
+</div>
+
+<div>
+<h3>Links</h3>
+<p>Process</p>
+<p>Legal</p>
+</div>
+
+<div>
+<h3>Certifications</h3>
+<p>APEDA</p>
+<p>IEC</p>
+</div>
+
 </footer>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
-   target="_blank"
-   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%;">
-💬</a>
-
-<script>
-function toggleDetails(card){
-  let details = card.querySelector(".details");
-  details.style.display = details.style.display === "block" ? "none" : "block";
-}
-
-document.getElementById("contactForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-  document.getElementById("status").innerText = "Sending...";
-
-  try {
-    const res = await fetch("https://dhanya-api.onrender.com/send", {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        name:document.getElementById("name").value,
-        email:document.getElementById("email").value,
-        message:document.getElementById("message").value
-      })
-    });
-
-    const data = await res.json();
-    document.getElementById("status").innerText = data.message;
-
-  } catch {
-    document.getElementById("status").innerText = "Error ❌";
-  }
-});
-</script>
 
 </body>
 </html>
