@@ -5,85 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<meta name="google-site-verification" content="FGmCSFKwjxHJWji1ive7J7_DPX4VMx4hhTGtBbMRVm8" />
-
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:'Segoe UI',sans-serif;background:#f4f4f4}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#f4f4f4;
+}
 
 /* NAV */
-nav{background:#1f5f2c;color:white;display:flex;justify-content:space-between;align-items:center;padding:15px 40px}
-.brand{display:flex;align-items:center;gap:10px}
+nav{
+  background:#1f5f2c;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
 .brand img{width:40px}
-.brand-text span{font-size:12px}
-.nav-btn{background:#d4af37;padding:8px 15px;border-radius:6px;cursor:pointer}
+
+.nav-btn{
+  background:#d4af37;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
 
 /* HERO */
 .hero{
-  position:relative;height:460px;
-  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+  height:420px;
+  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
   url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
-  background-size:cover;color:white;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  background-size:cover;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
-.ship{position:absolute;right:60px;top:70px;width:250px}
 
-/* SECTION */
-section{padding:40px;text-align:center}
-
-/* ADV */
+/* ADVANTAGE */
 .advantage{
-  max-width:1000px;margin:30px auto;
   background:linear-gradient(to right,#e8e4d6,#f4f1e6);
-  border-radius:10px;padding:25px
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
 }
-.adv-grid{display:flex;justify-content:space-between;flex-wrap:wrap}
-.adv-item{text-align:center;flex:1;min-width:180px}
-.adv-item img{width:35px}
 
-/* MAP (FIXED SIZE) */
+/* CENTER FIX */
+.advantage h2{
+  text-align:center;
+  margin-bottom:5px;
+}
+
+.advantage p{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* GRID */
+.adv-grid{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.adv-item{
+  width:180px;
+  text-align:center;
+}
+
+/* ICONS */
+.adv-item img{
+  width:40px;
+  margin-bottom:10px;
+}
+
+/* MAP */
 .map{
-  margin-top:20px;
   display:flex;
   justify-content:center;
 }
+
 .map img{
   width:60%;
-  max-width:500px;
-  border-radius:10px;
+  max-width:450px;
 }
 
-/* FOOTER (IMPROVED ALIGNMENT) */
+/* MARKETS */
+.markets{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.market{
+  background:#1f5f2c;
+  color:white;
+  padding:6px 12px;
+  border-radius:20px;
+}
+
+/* FOOTER */
 footer{
   background:#222;
   color:white;
   padding:30px;
   display:flex;
-  justify-content:space-around;
+  justify-content:center;
+  gap:60px;
   flex-wrap:wrap;
-  gap:20px;
   text-align:center;
 }
-
-footer div{
-  min-width:200px;
-}
-
-.badges img{
-  height:40px;
-  margin:5px;
-}
-
-/* POPUP */
-.popup{
-  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.6);justify-content:center;align-items:center;
-}
-.popup-content{
-  background:white;padding:25px;border-radius:10px;text-align:center;width:300px;
-}
-input,textarea{width:90%;padding:10px;margin:8px}
-button{padding:10px 20px;background:#d4af37;color:white;border:none}
 </style>
 </head>
 
@@ -93,58 +139,69 @@ button{padding:10px 20px;background:#d4af37;color:white;border:none}
 <nav>
 <div class="brand">
 <img src="https://cdn-icons-png.flaticon.com/512/2909/2909760.png">
-<div class="brand-text">
-<strong>DHANYA</strong>
-<span>GLOBAL EXPORTS</span>
+<div>
+<b>DHANYA</b><br><small>GLOBAL EXPORTS</small>
 </div>
 </div>
 
-<div class="nav-btn" onclick="openPopup()">REQUEST QUOTE</div>
+<div class="nav-btn">REQUEST QUOTE</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
 <h1>DIRECTLY SOURCED.<br>GLOBALLY DELIVERED.</h1>
 <p>Trusted Export Partner</p>
-<img class="ship" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Container_ship.png">
 </div>
 
-<!-- ADV -->
+<!-- ADVANTAGE -->
 <div class="advantage">
 <h2>THE DHANYA ADVANTAGE</h2>
 <p>Your unique model:</p>
 
 <div class="adv-grid">
+
 <div class="adv-item">
-<img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"><br>Direct from Farmer
+<img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+<p><b>Direct from Farmer</b></p>
 </div>
 
 <div class="adv-item">
-<img src="https://cdn-icons-png.flaticon.com/512/747/747310.png"><br>Advance Booking
+<img src="https://cdn-icons-png.flaticon.com/512/747/747310.png">
+<p><b>Advance Booking</b></p>
 </div>
 
 <div class="adv-item">
-<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png"><br>Quality Assured
+<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+<p><b>Quality Assured</b></p>
 </div>
 
 <div class="adv-item">
-<img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png"><br>Global Logistics
+<img src="https://cdn-icons-png.flaticon.com/512/854/854878.png">
+<p><b>Global Logistics</b></p>
 </div>
+
 </div>
 </div>
 
-<!-- EXPORT MAP -->
-<section>
+<!-- MAP -->
+<section style="text-align:center;">
 <h2>EXPORT MARKETS</h2>
-<p>We supply to multiple global destinations</p>
+
 <div class="map">
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
+</div>
+
+<div class="markets">
+<div class="market">UAE</div>
+<div class="market">Vietnam</div>
+<div class="market">Africa</div>
+<div class="market">Bangladesh</div>
+<div class="market">Indonesia</div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-
 <div>
 <h3>CONTACT</h3>
 <p>+91 6309281897</p>
@@ -152,35 +209,10 @@ button{padding:10px 20px;background:#d4af37;color:white;border:none}
 
 <div>
 <h3>CERTIFICATIONS</h3>
-<div class="badges">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/APEDA_logo.png/320px-APEDA_logo.png">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/IEC_India_logo.png/320px-IEC_India_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/APEDA_logo.png/320px-APEDA_logo.png" height="40">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/IEC_India_logo.png/320px-IEC_India_logo.png" height="40">
 </div>
-</div>
-
 </footer>
-
-<!-- POPUP FORM -->
-<div class="popup" id="popup">
-<div class="popup-content">
-<h3>Request Quote</h3>
-<input id="qname" placeholder="Name"><br>
-<input id="qemail" placeholder="Email"><br>
-<textarea id="qmsg" placeholder="Requirement"></textarea><br>
-<button onclick="sendQuote()">Submit</button><br><br>
-<button onclick="closePopup()">Close</button>
-</div>
-</div>
-
-<script>
-function openPopup(){document.getElementById("popup").style.display="flex";}
-function closePopup(){document.getElementById("popup").style.display="none";}
-
-async function sendQuote(){
-alert("Quote request sent!");
-closePopup();
-}
-</script>
 
 </body>
 </html>
