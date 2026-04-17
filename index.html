@@ -41,13 +41,38 @@ section{padding:40px;text-align:center}
 .adv-item{text-align:center;flex:1;min-width:180px}
 .adv-item img{width:35px}
 
-/* MAP */
-.map{margin-top:20px}
-.map img{width:80%;border-radius:10px}
+/* MAP (FIXED SIZE) */
+.map{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+}
+.map img{
+  width:60%;
+  max-width:500px;
+  border-radius:10px;
+}
 
-/* FOOTER */
-footer{background:#222;color:white;padding:30px;display:flex;justify-content:space-around;flex-wrap:wrap}
-.badges img{height:45px;margin-right:10px}
+/* FOOTER (IMPROVED ALIGNMENT) */
+footer{
+  background:#222;
+  color:white;
+  padding:30px;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:20px;
+  text-align:center;
+}
+
+footer div{
+  min-width:200px;
+}
+
+.badges img{
+  height:40px;
+  margin:5px;
+}
 
 /* POPUP */
 .popup{
