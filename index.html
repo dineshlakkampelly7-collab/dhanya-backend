@@ -12,66 +12,71 @@
 body{font-family:'Poppins',sans-serif;background:#f4f4f4}
 
 /* NAV */
-nav{background:#1f5f2c;color:white;display:flex;justify-content:space-between;align-items:center;padding:15px 50px}
-nav ul{display:flex;list-style:none;gap:25px}
+nav{
+background:#1f5f2c;color:white;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px
+}
+nav ul{display:flex;gap:20px;list-style:none}
 
 /* HERO */
 .hero{
-height:450px;
+height:460px;
 background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('rice.jpeg');
-background-size:cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
+background-size:cover;background-position:center;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;color:white
 }
-.hero h1{font-size:42px}
-.hero button{margin-top:20px;padding:12px 25px;background:#d4af37;border:none;color:white;border-radius:6px;cursor:pointer}
+.hero h1{font-size:40px}
+.hero p{margin-top:10px}
+.hero button{
+margin-top:20px;padding:12px 25px;
+background:#d4af37;border:none;color:white;border-radius:6px;cursor:pointer
+}
 
 /* SECTION */
-.section{padding:50px;text-align:center}
+.section{padding:50px 20px;text-align:center}
+.section h2{color:#1f5f2c;margin-bottom:20px}
 
 /* PRODUCTS */
-.products{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
+.products{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
 .card{
-background:white;width:300px;padding:15px;border-radius:10px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-cursor:pointer;
+background:white;width:300px;padding:15px;border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer
 }
 .images{display:flex;gap:5px;margin-top:10px}
 .images img{width:32%;border-radius:6px}
 
-/* SPECS */
-.specs{background:white;padding:20px;border-radius:10px;max-width:700px;margin:20px auto}
-
-/* BUTTON */
-.cta{
-margin-top:15px;
-background:#1f5f2c;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:6px;
-cursor:pointer;
+/* ADVANTAGE */
+.adv{
+background:#fff;
+padding:40px;
+margin:40px auto;
+max-width:1000px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08)
 }
+.adv-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.adv-item{width:200px;font-weight:600;color:#1f5f2c}
+
+/* SPEC */
+.spec{max-width:800px;margin:auto;background:white;padding:20px;border-radius:10px}
+
+/* EXPORT MAP */
+.map img{width:70%;margin-top:20px}
 
 /* FORM */
-form{max-width:500px;margin:20px auto;background:white;padding:20px;border-radius:10px}
+form{max-width:500px;margin:auto;background:white;padding:20px;border-radius:10px}
 input,textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:6px}
+
+/* CTA */
+.cta{background:#1f5f2c;color:white;padding:12px;border:none;border-radius:6px;width:100%;cursor:pointer}
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;padding:15px;border-radius:50%;
+text-decoration:none;font-size:20px
 }
 
 footer{background:#222;color:white;text-align:center;padding:30px}
@@ -80,126 +85,125 @@ footer{background:#222;color:white;text-align:center;padding:30px}
 
 <body>
 
-<!-- NAV -->
 <nav>
 <div><strong>DHANYA GLOBAL EXPORTS</strong></div>
 <ul>
-<li onclick="scrollToProducts()">PRODUCTS</li>
-<li onclick="scrollToContact()">CONTACT</li>
+<li onclick="scrollTo('products')">Products</li>
+<li onclick="scrollTo('contact')">Contact</li>
 </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-<h1>DIRECT FROM FARMERS.<br>GLOBAL DELIVERY.</h1>
-<button onclick="scrollToProducts()">EXPLORE PRODUCTS</button>
+<h1>Direct from Farmers. Exported Worldwide.</h1>
+<p>Reliable supplier of Rice & Maize from India</p>
+<button onclick="scrollTo('products')">Explore Products</button>
 </div>
 
 <!-- PRODUCTS -->
 <div id="products" class="section">
-<h2>OUR PRODUCE</h2>
+<h2>Our Produce</h2>
 
 <div class="products">
-
-<div class="card" onclick="selectProduct('rice')">
-<h3>SONA MASOORI RICE</h3>
+<div class="card" onclick="selectProduct('Rice')">
+<h3>Sona Masoori Rice</h3>
 <div class="images">
-<img src="rice.jpeg">
-<img src="rice.jpeg">
-<img src="rice.jpeg">
+<img src="rice.jpeg"><img src="rice.jpeg"><img src="rice.jpeg">
 </div>
 </div>
 
-<div class="card" onclick="selectProduct('maize')">
-<h3>DRIED YELLOW MAIZE</h3>
+<div class="card" onclick="selectProduct('Maize')">
+<h3>Dried Yellow Maize</h3>
 <div class="images">
-<img src="Maize.jpeg">
-<img src="Maize.jpeg">
-<img src="Maize.jpeg">
+<img src="Maize.jpeg"><img src="Maize.jpeg"><img src="Maize.jpeg">
+</div>
+</div>
 </div>
 </div>
 
+<!-- ADV -->
+<div class="adv">
+<h2>Your Advantage</h2>
+<div class="adv-grid">
+<div class="adv-item">Direct from Farmers</div>
+<div class="adv-item">Advance Booking Before Harvest</div>
+<div class="adv-item">Quality Assured Supply</div>
+<div class="adv-item">Flexible Bulk Orders</div>
 </div>
 </div>
 
-<!-- SPECS -->
+<!-- SPEC -->
 <div class="section">
-<h2>PRODUCT DETAILS</h2>
-
-<div id="specBox" class="specs">
-<p>Select a product to view details</p>
+<h2>Product Details</h2>
+<div id="spec" class="spec">
+Select product to view specifications
+</div>
+<button class="cta" onclick="enquire()">Enquire Now</button>
 </div>
 
-<button class="cta" onclick="enquire()">ENQUIRE NOW</button>
+<!-- EXPORT -->
+<div class="section">
+<h2>Export Markets</h2>
+<p>We supply to Middle East, Africa & Southeast Asia</p>
+<div class="map">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
+</div>
 </div>
 
-<!-- FORM -->
+<!-- CONTACT -->
 <div id="contact" class="section">
 <h2>Send Inquiry</h2>
-
-<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
+<form action="https://formsubmit.co/info@dhanyaglobalexports.com" method="POST">
+<input name="name" placeholder="Name" required>
+<input name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Requirement" required></textarea>
 <button class="cta">Send Inquiry</button>
 </form>
-
 </div>
 
-<!-- WHATSAPP -->
 <a id="wa" class="whatsapp" target="_blank">💬</a>
 
 <footer>
-<p>Dhanya Global Exports | India</p>
+<p>Dhanya Global Exports | APEDA Registered | IEC Certified</p>
 </footer>
 
 <script>
-let selectedProduct = "";
+let product="";
 
-function scrollToProducts(){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
+function scrollTo(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-function scrollToContact(){
-document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
+function selectProduct(p){
+product=p;
 
-function selectProduct(type){
-selectedProduct = type;
-
-let box = document.getElementById("specBox");
-
-if(type==="rice"){
-box.innerHTML=`
+if(p==="Rice"){
+document.getElementById("spec").innerHTML=`
 <table>
 <tr><td>Product</td><td>Sona Masoori Rice</td></tr>
-<tr><td>Moisture</td><td>12-14%</td></tr>
-<tr><td>Broken</td><td>5% Max</td></tr>
-<tr><td>Packaging</td><td>25/50 Kg</td></tr>
+<tr><td>MOQ</td><td>25 MT</td></tr>
+<tr><td>Packaging</td><td>25kg / 50kg</td></tr>
+<tr><td>Payment</td><td>LC / TT</td></tr>
+<tr><td>Lead Time</td><td>15-20 Days</td></tr>
 </table>`;
 }
 
-if(type==="maize"){
-box.innerHTML=`
+if(p==="Maize"){
+document.getElementById("spec").innerHTML=`
 <table>
 <tr><td>Product</td><td>Yellow Maize</td></tr>
+<tr><td>MOQ</td><td>25 MT</td></tr>
 <tr><td>Moisture</td><td>14% Max</td></tr>
-<tr><td>Foreign Matter</td><td>1% Max</td></tr>
-<tr><td>Packaging</td><td>50 Kg</td></tr>
+<tr><td>Payment</td><td>LC / TT</td></tr>
+<tr><td>Lead Time</td><td>10-15 Days</td></tr>
 </table>`;
 }
 }
 
 function enquire(){
-if(!selectedProduct){
-alert("Please select a product first");
-return;
-}
-
-let msg = "Hello, I am interested in " + selectedProduct + ". Please share details.";
-document.getElementById("wa").href =
-"https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg);
-
+if(!product){alert("Select product first");return;}
+let msg="Hello, I am interested in "+product+". Please share details.";
+document.getElementById("wa").href=
+"https://wa.me/91XXXXXXXXXX?text="+encodeURIComponent(msg);
 document.getElementById("wa").click();
 }
 </script>
