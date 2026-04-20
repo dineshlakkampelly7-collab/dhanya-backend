@@ -13,9 +13,6 @@ body{font-family:'Poppins',sans-serif;background:#f4f4f4}
 
 /* NAV */
 nav{background:#1f5f2c;color:white;display:flex;justify-content:space-between;align-items:center;padding:15px 50px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:45px}
-.logo-text span{font-size:12px}
 nav ul{display:flex;list-style:none;gap:25px}
 
 /* HERO */
@@ -23,36 +20,46 @@ nav ul{display:flex;list-style:none;gap:25px}
 height:450px;
 background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('rice.jpeg');
 background-size:cover;
-background-position:center;
-color:white;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+color:white;
 text-align:center;
 }
 .hero h1{font-size:42px}
-.hero button{margin-top:20px;padding:12px 25px;background:#d4af37;border:none;color:white;border-radius:6px}
+.hero button{margin-top:20px;padding:12px 25px;background:#d4af37;border:none;color:white;border-radius:6px;cursor:pointer}
 
 /* SECTION */
-.section{padding:50px 20px;text-align:center}
-.section h2{color:#1f5f2c;margin-bottom:25px}
+.section{padding:50px;text-align:center}
 
 /* PRODUCTS */
 .products{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
-.card{background:white;width:300px;padding:15px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.1)}
+.card{
+background:white;width:300px;padding:15px;border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+cursor:pointer;
+}
 .images{display:flex;gap:5px;margin-top:10px}
-.images img{width:32%;border-radius:6px;object-fit:cover}
+.images img{width:32%;border-radius:6px}
 
-/* SPEC TABLE */
-.specs{max-width:800px;margin:20px auto;background:white;padding:20px;border-radius:10px}
-.specs table{width:100%;border-collapse:collapse}
-.specs td{padding:10px;border-bottom:1px solid #ddd;text-align:left}
+/* SPECS */
+.specs{background:white;padding:20px;border-radius:10px;max-width:700px;margin:20px auto}
+
+/* BUTTON */
+.cta{
+margin-top:15px;
+background:#1f5f2c;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
 
 /* FORM */
 form{max-width:500px;margin:20px auto;background:white;padding:20px;border-radius:10px}
 input,textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:6px}
-button.submit{background:#1f5f2c;color:white;padding:10px;border:none;width:100%;border-radius:6px}
 
 /* WHATSAPP */
 .whatsapp{
@@ -67,8 +74,7 @@ font-size:20px;
 text-decoration:none;
 }
 
-/* FOOTER */
-footer{background:#222;color:white;padding:30px;text-align:center}
+footer{background:#222;color:white;text-align:center;padding:30px}
 </style>
 </head>
 
@@ -76,33 +82,27 @@ footer{background:#222;color:white;padding:30px;text-align:center}
 
 <!-- NAV -->
 <nav>
-<div class="logo">
-<img src="https://cdn-icons-png.flaticon.com/512/2909/2909760.png">
-<div class="logo-text"><strong>DHANYA</strong><br><span>GLOBAL EXPORTS</span></div>
-</div>
+<div><strong>DHANYA GLOBAL EXPORTS</strong></div>
 <ul>
-<li>HOME</li>
-<li>PRODUCE</li>
-<li>CONTACT</li>
+<li onclick="scrollToProducts()">PRODUCTS</li>
+<li onclick="scrollToContact()">CONTACT</li>
 </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<h1>DIRECTLY SOURCED.<br>GLOBALLY DELIVERED.</h1>
-<button>EXPLORE PRODUCTS</button>
+<h1>DIRECT FROM FARMERS.<br>GLOBAL DELIVERY.</h1>
+<button onclick="scrollToProducts()">EXPLORE PRODUCTS</button>
 </div>
 
 <!-- PRODUCTS -->
-<div class="section">
+<div id="products" class="section">
 <h2>OUR PRODUCE</h2>
 
 <div class="products">
 
-<!-- RICE -->
-<div class="card">
+<div class="card" onclick="selectProduct('rice')">
 <h3>SONA MASOORI RICE</h3>
-<p>Directly sourced from farmers</p>
 <div class="images">
 <img src="rice.jpeg">
 <img src="rice.jpeg">
@@ -110,10 +110,8 @@ footer{background:#222;color:white;padding:30px;text-align:center}
 </div>
 </div>
 
-<!-- MAIZE (UPDATED WITH YOUR IMAGE) -->
-<div class="card">
+<div class="card" onclick="selectProduct('maize')">
 <h3>DRIED YELLOW MAIZE</h3>
-<p>Export quality maize</p>
 <div class="images">
 <img src="Maize.jpeg">
 <img src="Maize.jpeg">
@@ -124,42 +122,87 @@ footer{background:#222;color:white;padding:30px;text-align:center}
 </div>
 </div>
 
-<!-- PRODUCT SPECS -->
+<!-- SPECS -->
 <div class="section">
-<h2>PRODUCT SPECIFICATIONS</h2>
-<div class="specs">
-<table>
-<tr><td>Variety</td><td>Sona Masoori</td></tr>
-<tr><td>Moisture</td><td>12-14%</td></tr>
-<tr><td>Broken</td><td>5% max</td></tr>
-<tr><td>Packaging</td><td>25kg / 50kg PP Bags</td></tr>
-<tr><td>Origin</td><td>India</td></tr>
-</table>
-</div>
+<h2>PRODUCT DETAILS</h2>
+
+<div id="specBox" class="specs">
+<p>Select a product to view details</p>
 </div>
 
-<!-- INQUIRY FORM -->
-<div class="section">
+<button class="cta" onclick="enquire()">ENQUIRE NOW</button>
+</div>
+
+<!-- FORM -->
+<div id="contact" class="section">
 <h2>Send Inquiry</h2>
 
 <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Requirement" required></textarea>
-<button class="submit">Send Inquiry</button>
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Requirement" required></textarea>
+<button class="cta">Send Inquiry</button>
 </form>
 
 </div>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20am%20interested%20in%20your%20products" target="_blank">
-💬
-</a>
+<a id="wa" class="whatsapp" target="_blank">💬</a>
 
-<!-- FOOTER -->
 <footer>
-<p>Dhanya Global Exports | Contact: +91 XXXXXXXX</p>
+<p>Dhanya Global Exports | India</p>
 </footer>
+
+<script>
+let selectedProduct = "";
+
+function scrollToProducts(){
+document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+function selectProduct(type){
+selectedProduct = type;
+
+let box = document.getElementById("specBox");
+
+if(type==="rice"){
+box.innerHTML=`
+<table>
+<tr><td>Product</td><td>Sona Masoori Rice</td></tr>
+<tr><td>Moisture</td><td>12-14%</td></tr>
+<tr><td>Broken</td><td>5% Max</td></tr>
+<tr><td>Packaging</td><td>25/50 Kg</td></tr>
+</table>`;
+}
+
+if(type==="maize"){
+box.innerHTML=`
+<table>
+<tr><td>Product</td><td>Yellow Maize</td></tr>
+<tr><td>Moisture</td><td>14% Max</td></tr>
+<tr><td>Foreign Matter</td><td>1% Max</td></tr>
+<tr><td>Packaging</td><td>50 Kg</td></tr>
+</table>`;
+}
+}
+
+function enquire(){
+if(!selectedProduct){
+alert("Please select a product first");
+return;
+}
+
+let msg = "Hello, I am interested in " + selectedProduct + ". Please share details.";
+document.getElementById("wa").href =
+"https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg);
+
+document.getElementById("wa").click();
+}
+</script>
 
 </body>
 </html>
