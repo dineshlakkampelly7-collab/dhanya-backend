@@ -5,71 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:Poppins;background:#f4f4f4;color:#1f5f2c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins;background:#f5f5f5;color:#1f5f2c}
 
 /* NAV */
 nav{
-background:#1f5f2c;color:white;
-display:flex;justify-content:space-between;
-padding:15px 40px
+background:linear-gradient(to right,#1f5f2c,#2e7d32);
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+position:sticky;
+top:0;
+z-index:1000;
 }
-.logo{display:flex;gap:10px;align-items:center}
-.logo-icon{color:#d4af37;font-weight:bold;font-size:24px}
-nav ul{display:flex;gap:20px;list-style:none}
+
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{font-size:24px;color:#d4af37;font-weight:700}
+nav ul{display:flex;gap:25px;list-style:none}
+nav li{cursor:pointer;transition:.3s}
+nav li:hover{color:#d4af37}
 
 /* HERO */
 .hero{
-height:480px;
+height:520px;
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('rice.jpeg');
 background-size:cover;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-text-align:center;color:white
-}
-.hero h1{font-size:38px}
-.hero p{margin-top:10px}
-.hero button{
-margin-top:20px;padding:12px 25px;
-background:#d4af37;color:white;border:none;border-radius:6px
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
 }
 
-/* TRUST BOX */
-.trust{
-display:flex;justify-content:center;gap:30px;
-flex-wrap:wrap;margin:40px 0
+.hero h1{
+font-size:42px;
+animation:fadeUp 1s ease;
 }
+
+.hero p{
+margin-top:10px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero button{
+margin-top:25px;
+padding:14px 28px;
+background:#d4af37;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
+}
+
+/* TRUST */
+.trust{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:50px 20px;
+}
+
 .box{
-background:white;padding:20px;width:220px;
-border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1)
+background:white;
+padding:25px;
+width:230px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:.3s;
+text-align:center;
+}
+
+.box:hover{
+transform:translateY(-8px);
 }
 
 /* PRODUCTS */
+.products-section{
+text-align:center;
+padding:50px 20px;
+}
+
 .products{
-display:flex;gap:20px;justify-content:center;flex-wrap:wrap
+display:flex;
+gap:25px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:20px;
 }
+
 .card{
-background:white;padding:15px;width:280px;border-radius:10px
+background:white;
+padding:15px;
+width:280px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:.3s;
 }
-.card img{width:100%;border-radius:6px}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
 
 /* STRENGTH */
 .strength{
-background:white;padding:40px;margin:40px
+background:white;
+padding:60px 20px;
+margin:40px 0;
 }
+
 .strength-grid{
-display:flex;gap:20px;flex-wrap:wrap;justify-content:center
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:20px;
+}
+
+/* ABOUT */
+.about{
+padding:60px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
 }
 
 /* CONTACT */
 .contact{
-background:#1f5f2c;color:white;padding:40px;text-align:center
+background:linear-gradient(to right,#1f5f2c,#2e7d32);
+color:white;
+padding:50px 20px;
+text-align:center;
 }
 
 /* FOOTER */
-footer{background:#222;color:white;text-align:center;padding:20px}
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
 </style>
 </head>
 
@@ -83,18 +181,17 @@ footer{background:#222;color:white;text-align:center;padding:20px}
 </div>
 
 <ul>
-<li>Home</li>
-<li>Products</li>
-<li>Contact</li>
+<li onclick="scrollToSection('products')">Products</li>
+<li onclick="scrollToSection('contact')">Contact</li>
 </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Excellence in Agricultural Exports</h1>
+<h1>Premium Agricultural Exports from India</h1>
 <p>Direct from Farmers • Bulk Supply • Global Delivery</p>
 
-<button onclick="document.getElementById('products').scrollIntoView()">Explore Products</button>
+<button onclick="scrollToSection('products')">Explore Products</button>
 </div>
 
 <!-- TRUST -->
@@ -102,7 +199,7 @@ footer{background:#222;color:white;text-align:center;padding:20px}
 
 <div class="box">
 <h3>Reliable Supply</h3>
-<p>Consistent export quality from trusted farmers</p>
+<p>Consistent quality sourcing from trusted farmers</p>
 </div>
 
 <div class="box">
@@ -118,21 +215,21 @@ footer{background:#222;color:white;text-align:center;padding:20px}
 </div>
 
 <!-- PRODUCTS -->
-<div id="products" style="text-align:center;padding:40px">
+<div id="products" class="products-section">
 <h2>Our Products</h2>
 
 <div class="products">
 
 <div class="card">
-<h3>Rice</h3>
 <img src="rice.jpeg">
-<p>Premium Sona Masoori Rice</p>
+<h3>Sona Masoori Rice</h3>
+<p>Premium export quality rice</p>
 </div>
 
 <div class="card">
-<h3>Maize</h3>
 <img src="Maize.jpeg">
-<p>Export Quality Yellow Maize</p>
+<h3>Dried Yellow Maize</h3>
+<p>High quality feed maize</p>
 </div>
 
 </div>
@@ -153,16 +250,18 @@ footer{background:#222;color:white;text-align:center;padding:20px}
 </div>
 
 <!-- ABOUT -->
-<div style="padding:40px;text-align:center">
-<h2>About Us</h2>
-<p style="max-width:800px;margin:auto">
+<div class="about">
+<h2>About Dhanya Global Exports</h2>
+<p>
 Dhanya Global Exports is a registered agricultural export firm based in India,
 specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
+<br><br>
+We focus on reliable supply, consistent quality, and long-term partnerships with global buyers.
 </p>
 </div>
 
 <!-- CONTACT -->
-<div class="contact">
+<div id="contact" class="contact">
 <h2>Contact Us</h2>
 <p>+91 XXXXXXXX</p>
 <p>info@dhanyaglobalexports.com</p>
@@ -173,6 +272,12 @@ specializing in sourcing high-quality grains directly from farmers and supplying
 <p>Dhanya Global Exports</p>
 <p>APEDA Registered | IEC Certified</p>
 </footer>
+
+<script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
