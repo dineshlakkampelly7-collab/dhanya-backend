@@ -5,302 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<meta name="description" content="Dhanya Global Exports - Reliable supplier of Rice and Maize from India. Bulk export to UAE, Africa, Vietnam.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f4f4;color:#1f5f2c}
+body{margin:0;font-family:Poppins;background:#f4f4f4;color:#1f5f2c}
 
 /* NAV */
 nav{
 background:#1f5f2c;color:white;
-display:flex;justify-content:space-between;align-items:center;
+display:flex;justify-content:space-between;
 padding:15px 40px
 }
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{font-weight:700;color:#d4af37;font-size:24px}
-.logo-text strong{color:white;font-size:15px}
-.logo-text span{color:white;font-size:11px;opacity:0.8}
+.logo{display:flex;gap:10px;align-items:center}
+.logo-icon{color:#d4af37;font-weight:bold;font-size:24px}
 nav ul{display:flex;gap:20px;list-style:none}
-nav li{cursor:pointer}
 
 /* HERO */
 .hero{
 height:480px;
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('rice.jpeg');
-background-size:cover;background-position:center;
-display:flex;flex-direction:column;justify-content:center;align-items:center;
-text-align:center
+background-size:cover;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;color:white
 }
-.hero h1{color:white;font-size:36px}
-.hero p{color:white;margin-top:10px}
-.hero ul{color:white;margin-top:15px;list-style:none}
+.hero h1{font-size:38px}
+.hero p{margin-top:10px}
 .hero button{
 margin-top:20px;padding:12px 25px;
-background:#d4af37;color:white;border:none;border-radius:6px;cursor:pointer
+background:#d4af37;color:white;border:none;border-radius:6px
 }
 
-/* SECTION */
-.section{padding:50px 20px;text-align:center}
+/* TRUST BOX */
+.trust{
+display:flex;justify-content:center;gap:30px;
+flex-wrap:wrap;margin:40px 0
+}
+.box{
+background:white;padding:20px;width:220px;
+border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1)
+}
 
 /* PRODUCTS */
-.products{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.products{
+display:flex;gap:20px;justify-content:center;flex-wrap:wrap
+}
 .card{
-background:white;width:300px;padding:15px;border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer
+background:white;padding:15px;width:280px;border-radius:10px
 }
-.images{display:flex;gap:5px;margin-top:10px}
-.images img{width:32%;border-radius:6px}
+.card img{width:100%;border-radius:6px}
 
-/* SPEC */
-.spec{
-max-width:850px;margin:auto;background:white;
-padding:20px;border-radius:10px;text-align:left
+/* STRENGTH */
+.strength{
+background:white;padding:40px;margin:40px
 }
-.spec table{width:100%;border-collapse:collapse}
-.spec td{padding:8px;border-bottom:1px solid #eee}
-
-/* ADV */
-.adv{
-background:white;padding:40px;margin:40px auto;
-max-width:1000px;border-radius:12px
-}
-.adv-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
-.adv-item{width:220px;font-weight:600}
-
-/* ABOUT */
-.about{
-max-width:900px;margin:auto;background:white;
-padding:30px;border-radius:10px;text-align:left
+.strength-grid{
+display:flex;gap:20px;flex-wrap:wrap;justify-content:center
 }
 
-/* TERMS */
-.terms{
-max-width:900px;margin:20px auto;background:white;
-padding:25px;border-radius:10px;text-align:left
-}
-.terms ul{margin-left:18px}
-
-/* MAP */
-.map img{width:70%;margin-top:20px}
-
-/* FORM */
-form{
-max-width:500px;margin:auto;background:white;
-padding:20px;border-radius:10px
-}
-input,textarea{
-width:100%;padding:10px;margin:10px 0;
-border:1px solid #ccc;border-radius:6px
-}
-
-/* CTA */
-.cta{
-background:#1f5f2c;color:white;
-padding:12px;border:none;border-radius:6px;width:100%;cursor:pointer
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;padding:15px;border-radius:50%
+/* CONTACT */
+.contact{
+background:#1f5f2c;color:white;padding:40px;text-align:center
 }
 
 /* FOOTER */
-footer{
-background:#222;color:white;text-align:center;padding:30px
-}
-
-/* CERTIFICATION LOGOS */
-.cert-logos{
-margin-top:15px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-.cert-logos img{
-height:45px;
-background:white;
-padding:5px;
-border-radius:6px;
-}
+footer{background:#222;color:white;text-align:center;padding:20px}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo">
 <div class="logo-icon">DGE 🌍</div>
-<div class="logo-text">
-<strong>Dhanya Global Exports</strong><br>
-<span>Premium Grains • Global Reach</span>
-</div>
+<div>Dhanya Global Exports</div>
 </div>
 
 <ul>
-<li onclick="go('products')">Products</li>
-<li onclick="go('contact')">Contact</li>
+<li>Home</li>
+<li>Products</li>
+<li>Contact</li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Reliable Agricultural Exporter from India</h1>
-<p>Direct Sourcing • Bulk Supply • Global Delivery</p>
+<h1>Excellence in Agricultural Exports</h1>
+<p>Direct from Farmers • Bulk Supply • Global Delivery</p>
 
-<ul>
-<li>✔ MOQ from 25 MT</li>
-<li>✔ Flexible Packaging (25/50 kg)</li>
-<li>✔ Advance Booking Available</li>
-</ul>
-
-<button onclick="go('products')">Explore Products</button>
+<button onclick="document.getElementById('products').scrollIntoView()">Explore Products</button>
 </div>
 
-<div id="products" class="section">
-<h2>Our Produce</h2>
+<!-- TRUST -->
+<div class="trust">
+
+<div class="box">
+<h3>Reliable Supply</h3>
+<p>Consistent export quality from trusted farmers</p>
+</div>
+
+<div class="box">
+<h3>Quality Assured</h3>
+<p>Strict quality checks before shipment</p>
+</div>
+
+<div class="box">
+<h3>Global Delivery</h3>
+<p>Serving UAE, Africa & Southeast Asia</p>
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" style="text-align:center;padding:40px">
+<h2>Our Products</h2>
 
 <div class="products">
-<div class="card" onclick="selectProduct('Rice')">
-<h3>Sona Masoori Rice</h3>
-<div class="images">
-<img src="rice.jpeg"><img src="rice.jpeg"><img src="rice.jpeg">
+
+<div class="card">
+<h3>Rice</h3>
+<img src="rice.jpeg">
+<p>Premium Sona Masoori Rice</p>
+</div>
+
+<div class="card">
+<h3>Maize</h3>
+<img src="Maize.jpeg">
+<p>Export Quality Yellow Maize</p>
+</div>
+
 </div>
 </div>
 
-<div class="card" onclick="selectProduct('Maize')">
-<h3>Dried Yellow Maize</h3>
-<div class="images">
-<img src="Maize.jpeg"><img src="Maize.jpeg"><img src="Maize.jpeg">
-</div>
-</div>
-</div>
-</div>
+<!-- STRENGTH -->
+<div class="strength">
+<h2 style="text-align:center">Our Strength</h2>
 
-<div class="section">
-<h2>Product Details</h2>
+<div class="strength-grid">
 
-<div id="spec" class="spec">
-Select a product to view specifications
-</div>
+<div class="box">Direct from Farmers</div>
+<div class="box">Competitive Pricing</div>
+<div class="box">Flexible Orders</div>
+<div class="box">Timely Shipment</div>
 
-<button class="cta" onclick="enquire()">Enquire Now (WhatsApp)</button>
-</div>
-
-<div class="adv">
-<h2>Why Buyers Choose Dhanya</h2>
-
-<div class="adv-grid">
-<div class="adv-item">Direct Procurement from Verified Farmers</div>
-<div class="adv-item">Advance Booking Before Harvest</div>
-<div class="adv-item">Quality Assured Supply</div>
-<div class="adv-item">Customized Bulk Orders (25MT–1000MT)</div>
 </div>
 </div>
 
-<div class="section">
-<h2>About Company</h2>
-
-<div class="about">
-Dhanya Global Exports is a registered agricultural export firm based in India, specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
-<br><br>
-We focus on reliable supply, consistent quality, and long-term partnerships with global buyers.
-</div>
-</div>
-
-<div class="section">
-<h2>Export Markets</h2>
-<p>UAE | Saudi Arabia | Vietnam | Indonesia | Kenya</p>
-
-<div class="map">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
-</div>
+<!-- ABOUT -->
+<div style="padding:40px;text-align:center">
+<h2>About Us</h2>
+<p style="max-width:800px;margin:auto">
+Dhanya Global Exports is a registered agricultural export firm based in India,
+specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
+</p>
 </div>
 
-<div id="contact" class="section">
-<h2>Send Inquiry</h2>
-
-<form action="https://formsubmit.co/info@dhanyaglobalexports.com" method="POST">
-<input type="hidden" name="_subject" value="New Export Inquiry">
-<input type="hidden" name="_captcha" value="false">
-
-<input name="name" placeholder="Name" required>
-<input name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Requirement" required></textarea>
-
-<button class="cta">Send Inquiry</button>
-</form>
+<!-- CONTACT -->
+<div class="contact">
+<h2>Contact Us</h2>
+<p>+91 XXXXXXXX</p>
+<p>info@dhanyaglobalexports.com</p>
 </div>
 
-<a id="wa" class="whatsapp" target="_blank"
-href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20am%20interested%20in%20your%20products">💬</a>
-
+<!-- FOOTER -->
 <footer>
 <p>Dhanya Global Exports</p>
-<p>APEDA Registered Exporter | IEC Certified</p>
-
-<div class="cert-logos">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/APEDA_logo.png/320px-APEDA_logo.png">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/IEC_India_logo.png/320px-IEC_India_logo.png">
-</div>
-
+<p>APEDA Registered | IEC Certified</p>
 </footer>
-
-<script>
-let product = "";
-
-function go(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-function selectProduct(p){
-product = p;
-
-if(p==="Rice"){
-document.getElementById("spec").innerHTML = `
-<table>
-<tr><td><strong>Product</strong></td><td>Sona Masoori Rice</td></tr>
-<tr><td>Origin</td><td>India</td></tr>
-<tr><td>MOQ</td><td>25 MT</td></tr>
-<tr><td>Packaging</td><td>25kg / 50kg</td></tr>
-<tr><td>Supply Capacity</td><td>500 MT/month</td></tr>
-<tr><td>Container</td><td>20FT / 40FT</td></tr>
-<tr><td>Inspection</td><td>SGS / Third Party</td></tr>
-<tr><td>Payment</td><td>LC / TT</td></tr>
-<tr><td>Lead Time</td><td>15–20 Days</td></tr>
-</table>`;
-}
-
-if(p==="Maize"){
-document.getElementById("spec").innerHTML = `
-<table>
-<tr><td><strong>Product</strong></td><td>Yellow Maize</td></tr>
-<tr><td>Origin</td><td>India</td></tr>
-<tr><td>MOQ</td><td>25 MT</td></tr>
-<tr><td>Moisture</td><td>14% Max</td></tr>
-<tr><td>Supply Capacity</td><td>600 MT/month</td></tr>
-<tr><td>Container</td><td>20FT / 40FT</td></tr>
-<tr><td>Inspection</td><td>SGS / Third Party</td></tr>
-<tr><td>Payment</td><td>LC / TT</td></tr>
-<tr><td>Lead Time</td><td>10–15 Days</td></tr>
-</table>`;
-}
-}
-
-function enquire(){
-if(!product){
-alert("Select a product first");
-return;
-}
-let msg="Hello, I am interested in "+product+". Please share details.";
-document.getElementById("wa").href=
-"https://wa.me/91XXXXXXXXXX?text="+encodeURIComponent(msg);
-document.getElementById("wa").click();
-}
-</script>
 
 </body>
 </html>
