@@ -8,64 +8,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL GREEN TEXT */
-body, p, h2, h3, td, li {
-  color: #1f5f2c;
-}
+body{font-family:'Poppins',sans-serif;margin:0;background:#f4f4f4}
 
-/* KEEP HERO TEXT WHITE */
-.hero h1,
-.hero p {
-  color: white;
-}
-
-/* NAV TEXT WHITE (important for visibility) */
-nav, nav li {
-  color: white;
-}
-
-/* CENTER "YOUR ADVANTAGE" */
-.adv {
-  text-align: center;
-}
-
-.adv h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* KEEP BUTTON TEXT WHITE */
-.hero button,
-.cta {
-  color: white;
-}
+/* GLOBAL GREEN */
+body,p,h2,h3,td,li{color:#1f5f2c}
 
 /* NAV */
-nav{
-background:#1f5f2c;color:white;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px
-}
+nav{background:#1f5f2c;color:white;display:flex;justify-content:space-between;padding:15px 40px}
 nav ul{display:flex;gap:20px;list-style:none}
 
 /* HERO */
 .hero{
 height:460px;
 background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('rice.jpeg');
-background-size:cover;background-position:center;
+background-size:cover;
 display:flex;flex-direction:column;justify-content:center;align-items:center;
 text-align:center;color:white
 }
-.hero h1{font-size:40px}
-.hero p{margin-top:10px}
-.hero button{
-margin-top:20px;padding:12px 25px;
-background:#d4af37;border:none;color:white;border-radius:6px;cursor:pointer
-}
+.hero h1,.hero p{color:white}
+.hero button{margin-top:20px;padding:12px 25px;background:#d4af37;border:none;color:white;border-radius:6px}
 
 /* SECTION */
 .section{padding:50px 20px;text-align:center}
-.section h2{color:#1f5f2c;margin-bottom:20px}
 
 /* PRODUCTS */
 .products{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
@@ -76,36 +40,35 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer
 .images{display:flex;gap:5px;margin-top:10px}
 .images img{width:32%;border-radius:6px}
 
-/* ADVANTAGE */
+/* SPEC */
+.spec{max-width:800px;margin:auto;background:white;padding:20px;border-radius:10px}
+
+/* ADV */
 .adv{
-background:#fff;
+background:white;
 padding:40px;
 margin:40px auto;
 max-width:1000px;
 border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08)
+text-align:center
 }
-.adv-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.adv-item{width:200px;font-weight:600;color:#1f5f2c}
+.adv-grid{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.adv-item{width:200px;font-weight:600}
 
-/* SPEC */
-.spec{max-width:800px;margin:auto;background:white;padding:20px;border-radius:10px}
-
-/* EXPORT MAP */
-.map img{width:70%;margin-top:20px}
+/* MAP */
+.map img{width:70%}
 
 /* FORM */
 form{max-width:500px;margin:auto;background:white;padding:20px;border-radius:10px}
-input,textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:6px}
+input,textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc}
 
-/* CTA */
-.cta{background:#1f5f2c;color:white;padding:12px;border:none;border-radius:6px;width:100%;cursor:pointer}
+/* BUTTON */
+.cta{background:#1f5f2c;color:white;padding:12px;border:none;border-radius:6px;width:100%}
 
 /* WHATSAPP */
 .whatsapp{
 position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;padding:15px;border-radius:50%;
-text-decoration:none;font-size:20px
+background:#25D366;color:white;padding:15px;border-radius:50%
 }
 
 footer{background:#222;color:white;text-align:center;padding:30px}
@@ -117,18 +80,18 @@ footer{background:#222;color:white;text-align:center;padding:30px}
 <nav>
 <div><strong>DHANYA GLOBAL EXPORTS</strong></div>
 <ul>
-<li onclick="scrollTo('products')">Products</li>
-<li onclick="scrollTo('contact')">Contact</li>
+<li onclick="scrollToSection('products')">Products</li>
+<li onclick="scrollToSection('contact')">Contact</li>
 </ul>
 </nav>
 
 <div class="hero">
 <h1>Direct from Farmers. Exported Worldwide.</h1>
-<p>Reliable supplier of Spices,Pulses,Millets,Basmathi & Maize from India</p>
-<button onclick="scrollTo('products')">Explore Products</button>
+<p>Reliable supplier of Spices, Pulses, Millets, Basmati & Maize</p>
+<button onclick="scrollToSection('products')">Explore Products</button>
 </div>
 
-<!-- PRODUCTS -->
+<!-- PRODUCE -->
 <div id="products" class="section">
 <h2>Our Produce</h2>
 
@@ -149,9 +112,21 @@ footer{background:#222;color:white;text-align:center;padding:30px}
 </div>
 </div>
 
-<!-- ADV -->
+<!-- PRODUCT DETAILS -->
+<div class="section">
+<h2>Product Details</h2>
+
+<div id="spec" class="spec">
+Select product to view specifications
+</div>
+
+<button class="cta" onclick="enquire()">Enquire Now</button>
+</div>
+
+<!-- ADVANTAGE -->
 <div class="adv">
-<h2>Your Advantage</h2>
+<h2>Why Buyers Choose Dhanya</h2>
+
 <div class="adv-grid">
 <div class="adv-item">Direct from Farmers</div>
 <div class="adv-item">Advance Booking Before Harvest</div>
@@ -160,19 +135,10 @@ footer{background:#222;color:white;text-align:center;padding:30px}
 </div>
 </div>
 
-<!-- SPEC -->
-<div class="section">
-<h2>Product Details</h2>
-<div id="spec" class="spec">
-Select product to view specifications
-</div>
-<button class="cta" onclick="enquire()">Enquire Now</button>
-</div>
-
 <!-- EXPORT -->
 <div class="section">
 <h2>Export Markets</h2>
-<p>We supply to Middle East, Africa & Southeast Asia</p>
+<p>Middle East, Africa & Southeast Asia</p>
 <div class="map">
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
 </div>
@@ -181,6 +147,7 @@ Select product to view specifications
 <!-- CONTACT -->
 <div id="contact" class="section">
 <h2>Send Inquiry</h2>
+
 <form action="https://formsubmit.co/info@dhanyaglobalexports.com" method="POST">
 <input name="name" placeholder="Name" required>
 <input name="email" placeholder="Email" required>
@@ -198,7 +165,7 @@ Select product to view specifications
 <script>
 let product="";
 
-function scrollTo(id){
+function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
