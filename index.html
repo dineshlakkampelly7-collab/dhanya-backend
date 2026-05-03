@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<meta name="description" content="Dhanya Global Exports - Reliable supplier of Rice and Maize from India. Bulk export, container shipments, global delivery.">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,106 +13,133 @@ body{font-family:Poppins;background:#f5f5f5;color:#1f5f2c}
 
 /* NAV */
 nav{
-background:linear-gradient(to right,#1f5f2c,#2e7d32);
+background:#1f5f2c;
 color:white;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px;
-position:sticky;top:0;z-index:999
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 50px;
 }
 .logo{display:flex;align-items:center;gap:10px}
-.logo-icon{font-weight:700;color:#d4af37;font-size:22px}
-nav ul{display:flex;gap:20px;list-style:none}
-nav li{cursor:pointer}
+.logo-icon{font-size:22px;color:#d4af37;font-weight:bold}
+nav ul{display:flex;gap:25px;list-style:none}
 
 /* HERO */
 .hero{
-position:relative;height:560px;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;overflow:hidden
+position:relative;height:600px;
+display:flex;justify-content:center;align-items:center;
+text-align:center;color:white
 }
-.hero video, .hero img{
+.hero video{
 position:absolute;width:100%;height:100%;object-fit:cover
 }
 .hero::after{
 content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,.6)
+background:rgba(0,0,0,.65)
 }
-.hero-content{position:relative;z-index:2;padding:20px}
-.hero h1{font-size:40px}
+.hero-content{position:relative;z-index:2}
+.hero h1{font-size:48px}
 .hero p{margin-top:10px}
 .hero button{
-margin-top:20px;padding:14px 28px;
-background:#d4af37;border:none;color:white;border-radius:6px;
-cursor:pointer;transition:.3s
+margin-top:20px;
+padding:14px 28px;
+background:#d4af37;
+border:none;
+color:white;
+border-radius:5px;
 }
-.hero button:hover{transform:scale(1.05)}
 
-/* FLOAT BOX */
-.float{
-display:flex;gap:20px;justify-content:center;
-margin-top:-50px;z-index:3;position:relative;
-flex-wrap:wrap
+/* INFO STRIP */
+.info{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:-60px;
+position:relative;
+z-index:5;
+flex-wrap:wrap;
 }
-.float div{
-background:white;padding:15px 25px;border-radius:10px;
+.info div{
+background:white;
+padding:20px 30px;
+border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.1)
 }
 
 /* SECTION */
-.section{padding:60px 20px;text-align:center}
+.section{padding:70px 20px;text-align:center}
+
+/* FEATURES */
+.features{
+display:flex;gap:25px;justify-content:center;flex-wrap:wrap
+}
+.f-box{
+background:white;padding:25px;width:250px;
+border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.1)
+}
 
 /* PRODUCTS */
-.products{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
-.card{
-background:white;width:280px;border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-overflow:hidden;transition:.3s
+.products{
+display:flex;gap:25px;justify-content:center;flex-wrap:wrap
 }
-.card:hover{transform:translateY(-6px)}
+.card{
+background:white;width:300px;border-radius:12px;
+overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.1);
+position:relative
+}
 .card img{width:100%;height:200px;object-fit:cover}
 .card-body{padding:15px}
 
-.btn{
-display:inline-block;margin-top:10px;
-padding:10px 18px;border-radius:6px;
-background:#1f5f2c;color:white;text-decoration:none;
-cursor:pointer;transition:.3s
+.overlay{
+position:absolute;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.6);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:.3s
 }
-.btn:hover{background:#2e7d32}
+.card:hover .overlay{opacity:1}
 
 /* STRENGTH */
 .strength{
-background:white;padding:60px 20px
+background:#1f5f2c;color:white;
+padding:70px 20px
 }
 .strength-grid{
-display:flex;gap:20px;flex-wrap:wrap;justify-content:center
+display:flex;gap:20px;justify-content:center;flex-wrap:wrap
 }
-.box{
-background:#fff;padding:20px;border-radius:10px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1)
+.strength-grid div{
+background:rgba(255,255,255,.1);
+padding:20px;border-radius:10px
 }
 
 /* ABOUT */
 .about{
 max-width:800px;margin:auto;
-background:white;padding:25px;border-radius:10px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1)
+background:white;padding:25px;
+border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.1)
 }
 
 /* CONTACT */
 .contact{
-background:#1f5f2c;color:white;padding:50px;text-align:center
+background:#111;color:white;padding:60px;text-align:center
 }
 
 /* FOOTER */
-footer{background:#222;color:white;text-align:center;padding:30px}
-.cert img{height:40px;margin:10px;background:white;padding:5px;border-radius:6px}
+footer{
+background:#222;color:white;text-align:center;padding:25px
+}
+.cert img{
+height:40px;margin:10px;background:white;padding:5px;border-radius:6px
+}
 
 /* WHATSAPP */
 .whatsapp{
 position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;padding:15px;border-radius:50%;
-font-size:20px
+background:#25D366;color:white;padding:15px;border-radius:50%
 }
 </style>
 </head>
@@ -127,6 +152,7 @@ font-size:20px
 <div class="logo-icon">DGE 🌍</div>
 <div>Dhanya Global Exports</div>
 </div>
+
 <ul>
 <li onclick="go('products')">Products</li>
 <li onclick="go('contact')">Contact</li>
@@ -140,22 +166,30 @@ font-size:20px
 <source src="https://cdn.coverr.co/videos/coverr-container-ship-in-the-sea-1570/1080p.mp4">
 </video>
 
-<!-- fallback image -->
-<img src="rice.jpeg">
-
 <div class="hero-content">
-<h1>Global Agricultural Export Specialists</h1>
-<p>Container Shipments • Bulk Supply • Worldwide Delivery</p>
+<h1>Excellence in Agricultural Exports</h1>
+<p>Direct from Farmers • Bulk Supply • Global Delivery</p>
 <button onclick="go('products')">Explore Products</button>
 </div>
 
 </div>
 
-<!-- FLOAT -->
-<div class="float">
+<!-- INFO STRIP -->
+<div class="info">
 <div>MOQ: 25 MT</div>
 <div>Container: 20FT / 40FT</div>
 <div>Payment: LC / TT</div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<h2>Why Choose Us</h2>
+
+<div class="features">
+<div class="f-box">Reliable Supply</div>
+<div class="f-box">Quality Assured</div>
+<div class="f-box">Global Delivery</div>
+</div>
 </div>
 
 <!-- PRODUCTS -->
@@ -168,18 +202,16 @@ font-size:20px
 <img src="rice.jpeg">
 <div class="card-body">
 <h3>Sona Masoori Rice</h3>
-<p>Premium export quality rice</p>
-<a class="btn" onclick="downloadSpec('rice')">Download Specs</a>
 </div>
+<div class="overlay">MOQ 25 MT</div>
 </div>
 
 <div class="card">
 <img src="Maize.jpeg">
 <div class="card-body">
-<h3>Dried Yellow Maize</h3>
-<p>High-quality feed maize</p>
-<a class="btn" onclick="downloadSpec('maize')">Download Specs</a>
+<h3>Yellow Maize</h3>
 </div>
+<div class="overlay">Export Quality</div>
 </div>
 
 </div>
@@ -188,20 +220,21 @@ font-size:20px
 <!-- STRENGTH -->
 <div class="strength">
 <h2>Our Strength</h2>
+
 <div class="strength-grid">
-<div class="box">Direct from Farmers</div>
-<div class="box">Competitive Pricing</div>
-<div class="box">Flexible Orders</div>
-<div class="box">Timely Shipment</div>
+<div>Direct from Farmers</div>
+<div>Competitive Pricing</div>
+<div>Flexible Orders</div>
+<div>Timely Shipment</div>
 </div>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
 <h2>About Us</h2>
+
 <div class="about">
-Dhanya Global Exports is a registered agricultural export firm based in India,
-specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
+Dhanya Global Exports is a registered agricultural export firm based in India, specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
 </div>
 </div>
 
@@ -223,23 +256,11 @@ specializing in sourcing high-quality grains directly from farmers and supplying
 </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20am%20interested%20in%20your%20products" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬</a>
 
 <script>
 function go(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-function downloadSpec(type){
-let content = type==="rice"
-? "Sona Masoori Rice Specs\nMOQ:25MT\nPackaging:25/50kg\nContainer:20FT/40FT"
-: "Yellow Maize Specs\nMOQ:25MT\nMoisture:14%\nContainer:20FT/40FT";
-
-const blob=new Blob([content],{type:"text/plain"});
-const link=document.createElement("a");
-link.href=URL.createObjectURL(blob);
-link.download=type+"-spec.txt";
-link.click();
 }
 </script>
 
