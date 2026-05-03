@@ -14,12 +14,12 @@ body{font-family:Poppins;background:#f5f5f5;color:#1f5f2c}
 /* NAV */
 nav{
 background:#1f5f2c;color:white;
-display:flex;justify-content:space-between;
+display:flex;justify-content:space-between;align-items:center;
 padding:15px 40px
 }
 .logo{display:flex;gap:10px;align-items:center}
 .logo-icon{color:#d4af37;font-weight:bold;font-size:22px}
-nav ul{display:flex;gap:20px;list-style:none}
+nav ul{display:flex;gap:20px;list-style:none;cursor:pointer}
 
 /* HERO */
 .hero{
@@ -35,10 +35,13 @@ background:rgba(0,0,0,.6)
 }
 .hero-content{position:relative;z-index:2}
 .hero h1{font-size:42px}
+.hero p{margin-top:10px}
 .hero button{
 margin-top:20px;padding:12px 25px;
-background:#d4af37;color:white;border:none;border-radius:6px
+background:#d4af37;color:white;border:none;border-radius:6px;
+cursor:pointer;transition:.3s
 }
+.hero button:hover{transform:scale(1.05)}
 
 /* INFO */
 .info{
@@ -58,16 +61,23 @@ box-shadow:0 6px 15px rgba(0,0,0,0.1)
 .card{
 background:white;width:280px;border-radius:10px;
 box-shadow:0 6px 15px rgba(0,0,0,0.1);
-overflow:hidden
+overflow:hidden;position:relative
 }
 .card img{width:100%;height:200px;object-fit:cover}
+.card-body{padding:15px}
+.overlay{
+position:absolute;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+color:white;display:flex;align-items:center;justify-content:center;
+opacity:0;transition:.3s
+}
+.card:hover .overlay{opacity:1}
 
 /* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-max-width:1000px;margin:auto
+gap:15px;max-width:1000px;margin:auto
 }
 .gallery img{
 width:100%;height:220px;object-fit:cover;
@@ -76,24 +86,19 @@ border-radius:10px;cursor:pointer
 
 /* LIGHTBOX */
 .lightbox{
-display:none;
-position:fixed;
+display:none;position:fixed;
 top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.8);
 justify-content:center;align-items:center;
 }
-.lightbox img{
-max-width:90%;max-height:90%;
-}
+.lightbox img{max-width:90%;max-height:90%}
 
 /* VIDEO */
 .video-box{
 max-width:900px;margin:auto;
 border-radius:10px;overflow:hidden
 }
-.video-box video{
-width:100%;height:400px;object-fit:cover
-}
+.video-box video{width:100%;height:400px;object-fit:cover}
 
 /* FLAGS */
 .flags{
@@ -106,7 +111,7 @@ box-shadow:0 5px 10px rgba(0,0,0,0.1)
 
 /* CONTACT */
 .contact{
-background:#1f5f2c;color:white;padding:50px
+background:#1f5f2c;color:white;padding:50px;text-align:center
 }
 
 /* FOOTER */
@@ -136,6 +141,7 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo">
 <div class="logo-icon">DGE 🌍</div>
@@ -154,7 +160,8 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 </video>
 
 <div class="hero-content">
-<h1>Global Agricultural Export Specialists</h1>
+<h1>Direct from Farmers. Exported Worldwide.</h1>
+<p>Trusted supplier of Rice & Maize from India</p>
 <button onclick="go('products')">Explore Products</button>
 </div>
 </div>
@@ -166,12 +173,40 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 <div>LC / TT Payment</div>
 </div>
 
+<!-- WHY -->
+<div class="section">
+<h2>Why Buyers Choose Us</h2>
+<div class="products">
+<div class="card"><div class="card-body">Direct from Farmers</div></div>
+<div class="card"><div class="card-body">Consistent Quality</div></div>
+<div class="card"><div class="card-body">Flexible Bulk Orders</div></div>
+</div>
+</div>
+
 <!-- PRODUCTS -->
 <div id="products" class="section">
 <h2>Our Products</h2>
+
 <div class="products">
-<div class="card"><img src="rice.jpeg"><h3>Sona Masoori Rice</h3></div>
-<div class="card"><img src="Maize.jpeg"><h3>Yellow Maize</h3></div>
+
+<div class="card">
+<img src="rice.jpeg">
+<div class="card-body">
+<h3>Sona Masoori Rice</h3>
+<p>Lightweight, aromatic export-quality rice.</p>
+</div>
+<div class="overlay">MOQ 25 MT</div>
+</div>
+
+<div class="card">
+<img src="Maize.jpeg">
+<div class="card-body">
+<h3>Yellow Maize</h3>
+<p>High-quality dried maize for export.</p>
+</div>
+<div class="overlay">Bulk Supply</div>
+</div>
+
 </div>
 </div>
 
@@ -201,7 +236,13 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 <img id="lightbox-img">
 </div>
 
-<!-- FLAGS -->
+<!-- UNIQUE MODEL -->
+<div class="section">
+<h2>Our Unique Model</h2>
+<p>Buyers can book crops in advance directly from farmers before harvest, ensuring supply security and better pricing.</p>
+</div>
+
+<!-- MARKETS -->
 <div class="section">
 <h2>Export Markets</h2>
 <div class="flags">
@@ -215,8 +256,9 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 <!-- CONTACT -->
 <div class="contact">
 <h2>Contact Us</h2>
-<p>+91 XXXXXXXX</p>
+<p>+91 6309281897</p>
 <p>info@dhanyaglobalexports.com</p>
+<p>Registered Agricultural Exporter | Direct Farmer Procurement</p>
 </div>
 
 <!-- FOOTER -->
@@ -234,17 +276,17 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 <h3>Request Quote</h3>
 <input placeholder="Name">
 <input placeholder="Email">
-<textarea placeholder="Requirement"></textarea>
+<input placeholder="Country">
+<textarea placeholder="Product & Quantity"></textarea>
 <button onclick="closePopup()">Submit</button>
 </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+<a class="whatsapp" href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products">💬</a>
 
 <script>
 function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 
-/* LIGHTBOX */
 function openImg(src){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=src;
@@ -253,7 +295,6 @@ function closeImg(){
 document.getElementById("lightbox").style.display="none";
 }
 
-/* POPUP */
 function openPopup(){
 document.getElementById("popup").style.display="flex";
 }
