@@ -32,47 +32,78 @@ position:relative;height:560px;
 display:flex;align-items:center;justify-content:center;
 text-align:center;color:white;overflow:hidden
 }
-.hero video{
+.hero video, .hero img{
 position:absolute;width:100%;height:100%;object-fit:cover
 }
 .hero::after{
 content:"";position:absolute;width:100%;height:100%;
 background:rgba(0,0,0,.6)
 }
-.hero-content{position:relative;z-index:2}
-.hero h1{font-size:42px}
+.hero-content{position:relative;z-index:2;padding:20px}
+.hero h1{font-size:40px}
 .hero p{margin-top:10px}
 .hero button{
 margin-top:20px;padding:14px 28px;
-background:#d4af37;border:none;color:white;border-radius:6px
+background:#d4af37;border:none;color:white;border-radius:6px;
+cursor:pointer;transition:.3s
 }
+.hero button:hover{transform:scale(1.05)}
 
 /* FLOAT BOX */
 .float{
 display:flex;gap:20px;justify-content:center;
-margin-top:-50px;z-index:3;position:relative
+margin-top:-50px;z-index:3;position:relative;
+flex-wrap:wrap
 }
 .float div{
 background:white;padding:15px 25px;border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.1)
 }
 
-/* PRODUCTS */
+/* SECTION */
 .section{padding:60px 20px;text-align:center}
-.products{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
 
+/* PRODUCTS */
+.products{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
 .card{
 background:white;width:280px;border-radius:12px;
 box-shadow:0 8px 20px rgba(0,0,0,0.1);
-overflow:hidden
+overflow:hidden;transition:.3s
 }
+.card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:200px;object-fit:cover}
 .card-body{padding:15px}
 
 .btn{
 display:inline-block;margin-top:10px;
 padding:10px 18px;border-radius:6px;
-background:#1f5f2c;color:white;text-decoration:none;font-size:14px
+background:#1f5f2c;color:white;text-decoration:none;
+cursor:pointer;transition:.3s
+}
+.btn:hover{background:#2e7d32}
+
+/* STRENGTH */
+.strength{
+background:white;padding:60px 20px
+}
+.strength-grid{
+display:flex;gap:20px;flex-wrap:wrap;justify-content:center
+}
+.box{
+background:#fff;padding:20px;border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1)
+}
+
+/* ABOUT */
+.about{
+max-width:800px;margin:auto;
+background:white;padding:25px;border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1)
+}
+
+/* CONTACT */
+.contact{
+background:#1f5f2c;color:white;padding:50px;text-align:center
 }
 
 /* FOOTER */
@@ -102,12 +133,15 @@ font-size:20px
 </ul>
 </nav>
 
-<!-- HERO (SHIP VIDEO) -->
+<!-- HERO -->
 <div class="hero">
 
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-container-ship-in-the-sea-1570/1080p.mp4" type="video/mp4">
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-container-ship-in-the-sea-1570/1080p.mp4">
 </video>
+
+<!-- fallback image -->
+<img src="rice.jpeg">
 
 <div class="hero-content">
 <h1>Global Agricultural Export Specialists</h1>
@@ -130,24 +164,20 @@ font-size:20px
 
 <div class="products">
 
-<!-- RICE -->
 <div class="card">
 <img src="rice.jpeg">
 <div class="card-body">
 <h3>Sona Masoori Rice</h3>
 <p>Premium export quality rice</p>
-
 <a class="btn" onclick="downloadSpec('rice')">Download Specs</a>
 </div>
 </div>
 
-<!-- MAIZE -->
 <div class="card">
 <img src="Maize.jpeg">
 <div class="card-body">
 <h3>Dried Yellow Maize</h3>
 <p>High-quality feed maize</p>
-
 <a class="btn" onclick="downloadSpec('maize')">Download Specs</a>
 </div>
 </div>
@@ -155,8 +185,28 @@ font-size:20px
 </div>
 </div>
 
+<!-- STRENGTH -->
+<div class="strength">
+<h2>Our Strength</h2>
+<div class="strength-grid">
+<div class="box">Direct from Farmers</div>
+<div class="box">Competitive Pricing</div>
+<div class="box">Flexible Orders</div>
+<div class="box">Timely Shipment</div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2>About Us</h2>
+<div class="about">
+Dhanya Global Exports is a registered agricultural export firm based in India,
+specializing in sourcing high-quality grains directly from farmers and supplying to international markets.
+</div>
+</div>
+
 <!-- CONTACT -->
-<div id="contact" class="section">
+<div id="contact" class="contact">
 <h2>Contact Us</h2>
 <p>+91 XXXXXXXX</p>
 <p>info@dhanyaglobalexports.com</p>
@@ -180,32 +230,10 @@ function go(id){
 document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-/* SPEC DOWNLOAD */
 function downloadSpec(type){
-
-let content="";
-
-if(type==="rice"){
-content=`Sona Masoori Rice Specifications
-
-Origin: India
-MOQ: 25 MT
-Packaging: 25kg / 50kg
-Container: 20FT / 40FT
-Payment: LC / TT
-Lead Time: 15-20 days`;
-}
-
-if(type==="maize"){
-content=`Yellow Maize Specifications
-
-Origin: India
-MOQ: 25 MT
-Moisture: 14% max
-Container: 20FT / 40FT
-Payment: LC / TT
-Lead Time: 10-15 days`;
-}
+let content = type==="rice"
+? "Sona Masoori Rice Specs\nMOQ:25MT\nPackaging:25/50kg\nContainer:20FT/40FT"
+: "Yellow Maize Specs\nMOQ:25MT\nMoisture:14%\nContainer:20FT/40FT";
 
 const blob=new Blob([content],{type:"text/plain"});
 const link=document.createElement("a");
