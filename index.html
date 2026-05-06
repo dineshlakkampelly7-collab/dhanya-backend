@@ -318,7 +318,7 @@ cursor:pointer;
 background:#2c7a3b;
 }
 
-/* EXPORT STATS */
+/* STATS */
 
 .stats-section{
 background:white;
@@ -539,7 +539,7 @@ padding:20px;
 .product-modal-box{
 background:white;
 width:100%;
-max-width:850px;
+max-width:900px;
 border-radius:18px;
 overflow:hidden;
 }
@@ -553,7 +553,7 @@ grid-template-columns:1fr 1fr;
 width:100%;
 height:100%;
 object-fit:cover;
-min-height:320px;
+min-height:350px;
 }
 
 .product-info{
@@ -563,6 +563,12 @@ padding:35px;
 .product-info h2{
 font-size:34px;
 margin-bottom:15px;
+}
+
+.product-info p{
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
 }
 
 .spec-table{
@@ -672,8 +678,6 @@ grid-template-columns:1fr;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <div class="logo">
@@ -689,8 +693,6 @@ grid-template-columns:1fr;
 </ul>
 
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -725,8 +727,6 @@ Request Quote
 
 </section>
 
-<!-- INFO -->
-
 <div class="info-strip">
 
 <div class="info-container">
@@ -755,8 +755,6 @@ Request Quote
 
 </div>
 
-<!-- PRODUCTS -->
-
 <section id="products" class="section">
 
 <div class="container">
@@ -772,8 +770,6 @@ Premium agricultural commodities sourced directly from trusted farming networks 
 </div>
 
 <div class="products">
-
-<!-- RICE -->
 
 <div class="product-card">
 
@@ -803,8 +799,6 @@ View Details
 </div>
 
 </div>
-
-<!-- MAIZE -->
 
 <div class="product-card">
 
@@ -840,8 +834,6 @@ View Details
 </div>
 
 </section>
-
-<!-- EXPORT STATS -->
 
 <section class="stats-section">
 
@@ -881,8 +873,6 @@ Strong sourcing network and scalable export operations.
 
 </section>
 
-<!-- VIDEO -->
-
 <section class="section video-section">
 
 <div class="container">
@@ -908,8 +898,6 @@ Real field-level harvesting operations directly from farming communities.
 </div>
 
 </section>
-
-<!-- ADVANTAGE -->
 
 <section id="advantage" class="section">
 
@@ -957,8 +945,6 @@ Reliable sourcing model built for long-term partnerships.
 
 </section>
 
-<!-- EXPORT MARKETS -->
-
 <section class="market-strip">
 
 <h2>Target Export Markets</h2>
@@ -974,8 +960,6 @@ Reliable sourcing model built for long-term partnerships.
 </div>
 
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
@@ -1010,8 +994,6 @@ APEDA & IEC Certified
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
 <h3>Dhanya Global Exports</h3>
@@ -1029,8 +1011,6 @@ Premium Agricultural Export Company from India
 </div>
 
 </footer>
-
-<!-- POPUP -->
 
 <div class="popup" id="popup">
 
@@ -1053,8 +1033,6 @@ Submit Inquiry
 </div>
 
 </div>
-
-<!-- RICE MODAL -->
 
 <div class="product-modal" id="riceModal">
 
@@ -1126,8 +1104,6 @@ Request Quote
 
 </div>
 
-<!-- MAIZE MODAL -->
-
 <div class="product-modal" id="maizeModal">
 
 <div class="close-modal" onclick="closeModals()">✕</div>
@@ -1198,8 +1174,6 @@ Request Quote
 
 </div>
 
-<!-- WHATSAPP -->
-
 <a class="whatsapp"
 href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
 target="_blank">
@@ -1234,11 +1208,13 @@ document.getElementById("maizeModal")
 }
 
 function closeModals(){
+
 document.getElementById("riceModal")
 .style.display="none";
 
 document.getElementById("maizeModal")
 .style.display="none";
+
 }
 
 </script>
