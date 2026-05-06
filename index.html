@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<meta name="description" content="Dhanya Global Exports - Premium Agricultural Export Company from India">
+<meta name="description" content="Premium Agricultural Export Company from India">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -311,10 +311,45 @@ color:white;
 border-radius:8px;
 text-decoration:none;
 transition:.3s;
+cursor:pointer;
 }
 
 .product-btn:hover{
 background:#2c7a3b;
+}
+
+/* EXPORT STATS */
+
+.stats-section{
+background:white;
+padding:90px 20px;
+}
+
+.stats-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat-card{
+background:#f8f8f8;
+padding:35px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.stat-card:hover{
+transform:translateY(-6px);
+}
+
+.stat-card h2{
+font-size:42px;
+color:#1f5f2c;
+margin-bottom:10px;
 }
 
 /* VIDEO */
@@ -363,14 +398,29 @@ font-size:42px;
 margin-bottom:18px;
 }
 
-.adv-card h3{
-margin-bottom:12px;
-font-size:22px;
+/* MARKET */
+
+.market-strip{
+background:#16391f;
+padding:70px 20px;
+color:white;
+text-align:center;
 }
 
-.adv-card p{
-line-height:1.8;
-color:#555;
+.market-flags{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.market{
+background:rgba(255,255,255,.1);
+padding:18px 24px;
+border-radius:12px;
+backdrop-filter:blur(5px);
+font-size:18px;
 }
 
 /* CONTACT */
@@ -393,17 +443,6 @@ margin:auto;
 background:rgba(255,255,255,0.08);
 padding:35px;
 border-radius:18px;
-backdrop-filter:blur(5px);
-}
-
-.contact-card h3{
-margin-bottom:20px;
-font-size:28px;
-}
-
-.contact-card p{
-line-height:2;
-color:#f1f1f1;
 }
 
 /* FOOTER */
@@ -481,6 +520,96 @@ font-size:16px;
 cursor:pointer;
 }
 
+/* PRODUCT MODAL */
+
+.product-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+z-index:99999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.product-modal-box{
+background:white;
+width:100%;
+max-width:850px;
+border-radius:18px;
+overflow:hidden;
+}
+
+.product-top{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.product-top img{
+width:100%;
+height:100%;
+object-fit:cover;
+min-height:320px;
+}
+
+.product-info{
+padding:35px;
+}
+
+.product-info h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.spec-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.spec-table td{
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.modal-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.modal-btn{
+padding:12px 22px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.green-btn{
+background:#1f5f2c;
+color:white;
+}
+
+.gold-btn{
+background:#d4af37;
+color:white;
+}
+
+.close-modal{
+position:absolute;
+top:20px;
+right:30px;
+font-size:32px;
+color:white;
+cursor:pointer;
+}
+
 /* WHATSAPP */
 
 .whatsapp{
@@ -497,7 +626,6 @@ border-radius:50%;
 font-size:28px;
 text-decoration:none;
 color:white;
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
 z-index:999;
 }
 
@@ -531,6 +659,10 @@ font-size:34px;
 
 .video-wrapper video{
 height:320px;
+}
+
+.product-top{
+grid-template-columns:1fr;
 }
 
 }
@@ -574,7 +706,7 @@ Exported Worldwide.
 </h1>
 
 <p>
-Trusted agricultural export company from India supplying premium Rice and Yellow Maize to international buyers with reliable quality and bulk shipment capability.
+Trusted agricultural export company from India supplying premium Rice and Yellow Maize to international buyers.
 </p>
 
 <div class="hero-buttons">
@@ -605,18 +737,18 @@ Request Quote
 </div>
 
 <div class="info-box">
-<h3>20FT / 40FT Containers</h3>
-<p>Efficient export logistics and container handling.</p>
+<h3>20FT / 40FT</h3>
+<p>Container export capability.</p>
 </div>
 
 <div class="info-box">
-<h3>LC / TT Payment</h3>
-<p>Secure international payment methods accepted.</p>
+<h3>LC / TT</h3>
+<p>Secure international payment methods.</p>
 </div>
 
 <div class="info-box">
 <h3>Direct Procurement</h3>
-<p>Sourced directly from farmers for better quality.</p>
+<p>Directly sourced from farmers.</p>
 </div>
 
 </div>
@@ -634,7 +766,7 @@ Request Quote
 <h2>Our Products</h2>
 
 <p>
-We supply export-grade agricultural commodities sourced directly from trusted farming networks across India.
+Premium agricultural commodities sourced directly from trusted farming networks across India.
 </p>
 
 </div>
@@ -661,10 +793,10 @@ Export Quality
 <h3>Sona Masoori Rice</h3>
 
 <p>
-Premium lightweight and aromatic rice suitable for global export markets with excellent cooking quality and consistency.
+Premium lightweight and aromatic rice suitable for international export markets.
 </p>
 
-<a href="#" class="product-btn">
+<a class="product-btn" onclick="openRiceModal()">
 View Details
 </a>
 
@@ -692,10 +824,10 @@ Bulk Supply
 <h3>Yellow Maize</h3>
 
 <p>
-High-quality dried maize suitable for feed, industrial and international export applications with controlled moisture.
+High-quality dried maize suitable for feed and industrial export applications.
 </p>
 
-<a href="#" class="product-btn">
+<a class="product-btn" onclick="openMaizeModal()">
 View Details
 </a>
 
@@ -703,6 +835,46 @@ View Details
 
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPORT STATS -->
+
+<section class="stats-section">
+
+<div class="section-title">
+
+<h2>Export Capability</h2>
+
+<p>
+Strong sourcing network and scalable export operations.
+</p>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h2>25+</h2>
+<p>Farmer Connections</p>
+</div>
+
+<div class="stat-card">
+<h2>20FT / 40FT</h2>
+<p>Container Capacity</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>Direct Procurement</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Buyer Support</p>
 </div>
 
 </div>
@@ -720,7 +892,7 @@ View Details
 <h2>Harvesting Process</h2>
 
 <p>
-Real field-level harvesting and sourcing operations directly from local farming communities.
+Real field-level harvesting operations directly from farming communities.
 </p>
 
 </div>
@@ -748,7 +920,7 @@ Real field-level harvesting and sourcing operations directly from local farming 
 <h2>Why Buyers Choose Us</h2>
 
 <p>
-Our procurement model and export process are built for reliability, quality and long-term partnerships.
+Reliable sourcing model built for long-term partnerships.
 </p>
 
 </div>
@@ -756,54 +928,48 @@ Our procurement model and export process are built for reliability, quality and 
 <div class="advantage-grid">
 
 <div class="adv-card">
-
 <div class="adv-icon">🤝</div>
-
 <h3>Direct from Farmers</h3>
-
-<p>
-We procure directly from local farming networks ensuring transparency and better quality control.
-</p>
-
+<p>Transparent sourcing and quality control.</p>
 </div>
 
 <div class="adv-card">
-
 <div class="adv-icon">📦</div>
-
 <h3>Bulk Export Supply</h3>
-
-<p>
-Capable of handling large-scale international export orders with efficient shipment planning.
-</p>
-
+<p>Efficient shipment handling for international buyers.</p>
 </div>
 
 <div class="adv-card">
-
 <div class="adv-icon">🌍</div>
-
 <h3>Global Market Focus</h3>
-
-<p>
-Supplying international buyers across Middle East, Africa and Southeast Asia.
-</p>
-
+<p>Supplying buyers across multiple countries.</p>
 </div>
 
 <div class="adv-card">
-
 <div class="adv-icon">📅</div>
-
 <h3>Advance Crop Booking</h3>
-
-<p>
-Buyers can reserve crops before harvest to ensure supply security and stable pricing.
-</p>
-
+<p>Secure supply before harvest season.</p>
 </div>
 
 </div>
+
+</div>
+
+</section>
+
+<!-- EXPORT MARKETS -->
+
+<section class="market-strip">
+
+<h2>Target Export Markets</h2>
+
+<div class="market-flags">
+
+<div class="market">🇦🇪 UAE</div>
+<div class="market">🇸🇦 Saudi Arabia</div>
+<div class="market">🇻🇳 Vietnam</div>
+<div class="market">🇰🇪 Africa</div>
+<div class="market">🇴🇲 Oman</div>
 
 </div>
 
@@ -820,7 +986,7 @@ Buyers can reserve crops before harvest to ensure supply security and stable pri
 <h3>Contact Information</h3>
 
 <p>
-+91 XXXXXXXXXX<br>
++91 6309281897<br>
 info@dhanyaglobalexports.com<br>
 India
 </p>
@@ -888,6 +1054,150 @@ Submit Inquiry
 
 </div>
 
+<!-- RICE MODAL -->
+
+<div class="product-modal" id="riceModal">
+
+<div class="close-modal" onclick="closeModals()">✕</div>
+
+<div class="product-modal-box">
+
+<div class="product-top">
+
+<img src="rice.jpeg"
+onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg'">
+
+<div class="product-info">
+
+<h2>Sona Masoori Rice</h2>
+
+<p>
+Premium lightweight and aromatic rice widely preferred in international markets.
+</p>
+
+<table class="spec-table">
+
+<tr>
+<td>Origin</td>
+<td>India</td>
+</tr>
+
+<tr>
+<td>MOQ</td>
+<td>25 MT</td>
+</tr>
+
+<tr>
+<td>Packaging</td>
+<td>25kg / 50kg PP Bags</td>
+</tr>
+
+<tr>
+<td>Container</td>
+<td>20FT / 40FT</td>
+</tr>
+
+<tr>
+<td>Payment</td>
+<td>LC / TT</td>
+</tr>
+
+</table>
+
+<div class="modal-buttons">
+
+<button class="modal-btn green-btn"
+onclick="window.open('https://wa.me/916309281897')">
+WhatsApp Inquiry
+</button>
+
+<button class="modal-btn gold-btn"
+onclick="openPopup()">
+Request Quote
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MAIZE MODAL -->
+
+<div class="product-modal" id="maizeModal">
+
+<div class="close-modal" onclick="closeModals()">✕</div>
+
+<div class="product-modal-box">
+
+<div class="product-top">
+
+<img src="Maize.jpeg"
+onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg'">
+
+<div class="product-info">
+
+<h2>Yellow Maize</h2>
+
+<p>
+High-quality dried maize suitable for feed and industrial export markets.
+</p>
+
+<table class="spec-table">
+
+<tr>
+<td>Origin</td>
+<td>India</td>
+</tr>
+
+<tr>
+<td>MOQ</td>
+<td>25 MT</td>
+</tr>
+
+<tr>
+<td>Moisture</td>
+<td>14% Max</td>
+</tr>
+
+<tr>
+<td>Container</td>
+<td>20FT / 40FT</td>
+</tr>
+
+<tr>
+<td>Payment</td>
+<td>LC / TT</td>
+</tr>
+
+</table>
+
+<div class="modal-buttons">
+
+<button class="modal-btn green-btn"
+onclick="window.open('https://wa.me/916309281897')">
+WhatsApp Inquiry
+</button>
+
+<button class="modal-btn gold-btn"
+onclick="openPopup()">
+Request Quote
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 <!-- WHATSAPP -->
 
 <a class="whatsapp"
@@ -910,6 +1220,24 @@ document.getElementById("popup")
 
 function closePopup(){
 document.getElementById("popup")
+.style.display="none";
+}
+
+function openRiceModal(){
+document.getElementById("riceModal")
+.style.display="flex";
+}
+
+function openMaizeModal(){
+document.getElementById("maizeModal")
+.style.display="flex";
+}
+
+function closeModals(){
+document.getElementById("riceModal")
+.style.display="none";
+
+document.getElementById("maizeModal")
 .style.display="none";
 }
 
