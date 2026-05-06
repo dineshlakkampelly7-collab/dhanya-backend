@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
+<meta name="description" content="Dhanya Global Exports - Premium Agricultural Export Company from India">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -24,36 +26,40 @@ overflow-x:hidden;
 }
 
 /* NAVBAR */
+
 nav{
-background:#1f5f2c;
+position:fixed;
+top:0;
+left:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 50px;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+padding:18px 60px;
+background:rgba(15,45,20,0.92);
+backdrop-filter:blur(8px);
+z-index:1000;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 color:white;
+font-size:22px;
 font-weight:600;
-font-size:20px;
 }
 
 .logo-icon{
 color:#d4af37;
-font-size:24px;
-font-weight:bold;
+font-size:28px;
+font-weight:700;
 }
 
 nav ul{
 display:flex;
-gap:30px;
+gap:35px;
 list-style:none;
 }
 
@@ -62,6 +68,7 @@ color:white;
 cursor:pointer;
 transition:.3s;
 font-size:15px;
+font-weight:500;
 }
 
 nav li:hover{
@@ -69,15 +76,15 @@ color:#d4af37;
 }
 
 /* HERO */
+
 .hero{
 position:relative;
-height:600px;
+height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
 overflow:hidden;
-color:white;
 }
 
 .hero video{
@@ -87,180 +94,344 @@ height:100%;
 object-fit:cover;
 }
 
-.hero::after{
+.hero::before{
 content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.55);
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.55));
+z-index:1;
 }
 
 .hero-content{
 position:relative;
 z-index:2;
+max-width:900px;
 padding:20px;
 }
 
 .hero h1{
-font-size:52px;
-line-height:1.2;
-margin-bottom:15px;
+font-size:68px;
+line-height:1.15;
+color:white;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
-margin-bottom:25px;
+font-size:20px;
+color:#f2f2f2;
+line-height:1.8;
+max-width:700px;
+margin:auto;
 }
 
-.hero button{
-padding:14px 30px;
+.hero-buttons{
+margin-top:35px;
+display:flex;
+gap:18px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.primary-btn{
 background:#d4af37;
-border:none;
-border-radius:6px;
 color:white;
+padding:15px 32px;
+border:none;
+border-radius:8px;
 font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.primary-btn:hover{
+transform:translateY(-4px);
+background:#c79d1f;
+}
+
+.secondary-btn{
+background:transparent;
+color:white;
+padding:15px 32px;
+border:2px solid white;
+border-radius:8px;
+font-size:16px;
+font-weight:600;
 cursor:pointer;
 transition:.3s;
 }
 
-.hero button:hover{
-transform:translateY(-3px);
-background:#c59d28;
+.secondary-btn:hover{
+background:white;
+color:#1f5f2c;
 }
 
-/* INFO STRIP */
-.info{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:-50px;
+/* FLOAT INFO */
+
+.info-strip{
+margin-top:-60px;
 position:relative;
 z-index:5;
 padding:0 20px;
 }
 
-.info div{
-background:white;
-padding:18px 28px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-font-weight:500;
-}
-
-/* SECTION */
-.section{
-padding:80px 20px;
-text-align:center;
-}
-
-.section h2{
-font-size:36px;
-margin-bottom:15px;
-}
-
-.section p{
-max-width:800px;
+.info-container{
+max-width:1200px;
 margin:auto;
-line-height:1.8;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-/* PRODUCTS */
-.products{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.card{
+.info-box{
 background:white;
-width:320px;
-border-radius:14px;
-overflow:hidden;
+padding:28px 20px;
+border-radius:16px;
+text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
+.info-box:hover{
+transform:translateY(-5px);
 }
 
-.card img{
-width:100%;
-height:230px;
-object-fit:cover;
+.info-box h3{
+font-size:18px;
+margin-top:10px;
 }
 
-.card-body{
-padding:20px;
-}
-
-.card-body h3{
-margin-bottom:10px;
-font-size:22px;
-}
-
-.card-body p{
+.info-box p{
+margin-top:8px;
 font-size:14px;
 line-height:1.7;
 }
 
-/* VIDEO */
-.video-box{
-max-width:1000px;
-margin:40px auto;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.12);
+/* SECTION */
+
+.section{
+padding:100px 20px;
 }
 
-.video-box video{
+.container{
+max-width:1250px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:44px;
+margin-bottom:15px;
+color:#16391f;
+}
+
+.section-title p{
+max-width:760px;
+margin:auto;
+line-height:1.8;
+color:#555;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.product-card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+transition:.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-image{
+position:relative;
+overflow:hidden;
+height:280px;
+}
+
+.product-image img{
 width:100%;
-height:500px;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.product-card:hover .product-image img{
+transform:scale(1.08);
+}
+
+.product-overlay{
+position:absolute;
+bottom:15px;
+left:15px;
+background:#d4af37;
+color:white;
+padding:8px 16px;
+border-radius:30px;
+font-size:13px;
+font-weight:600;
+}
+
+.product-content{
+padding:28px;
+}
+
+.product-content h3{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.product-content p{
+line-height:1.8;
+color:#555;
+margin-bottom:22px;
+}
+
+.product-btn{
+display:inline-block;
+padding:12px 24px;
+background:#1f5f2c;
+color:white;
+border-radius:8px;
+text-decoration:none;
+transition:.3s;
+}
+
+.product-btn:hover{
+background:#2c7a3b;
+}
+
+/* VIDEO */
+
+.video-section{
+background:white;
+}
+
+.video-wrapper{
+max-width:1100px;
+margin:auto;
+overflow:hidden;
+border-radius:22px;
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.video-wrapper video{
+width:100%;
+height:600px;
 object-fit:cover;
 }
 
-/* CONTACT */
-.contact{
-background:#1f5f2c;
-color:white;
-padding:70px 20px;
+/* ADVANTAGE */
+
+.advantage-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.adv-card{
+background:white;
+padding:35px 28px;
+border-radius:18px;
 text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:.3s;
 }
 
-.contact h2{
-font-size:38px;
-margin-bottom:15px;
+.adv-card:hover{
+transform:translateY(-8px);
 }
 
-.contact p{
-margin-top:10px;
-font-size:16px;
+.adv-icon{
+font-size:42px;
+margin-bottom:18px;
+}
+
+.adv-card h3{
+margin-bottom:12px;
+font-size:22px;
+}
+
+.adv-card p{
+line-height:1.8;
+color:#555;
+}
+
+/* CONTACT */
+
+.contact{
+background:#16391f;
+color:white;
+padding:90px 20px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.contact-card{
+background:rgba(255,255,255,0.08);
+padding:35px;
+border-radius:18px;
+backdrop-filter:blur(5px);
+}
+
+.contact-card h3{
+margin-bottom:20px;
+font-size:28px;
+}
+
+.contact-card p{
+line-height:2;
+color:#f1f1f1;
 }
 
 /* FOOTER */
+
 footer{
-background:#161616;
+background:#111;
 color:white;
+padding:45px 20px;
 text-align:center;
-padding:35px 20px;
 }
 
-.cert{
-margin-top:20px;
+.certifications{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.cert img{
-height:45px;
-margin:10px;
+.certifications img{
+height:55px;
 background:white;
-padding:6px;
-border-radius:8px;
+padding:8px;
+border-radius:10px;
 }
 
 /* POPUP */
+
 .popup{
 display:none;
 position:fixed;
@@ -268,80 +439,98 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.65);
+background:rgba(0,0,0,.7);
 justify-content:center;
 align-items:center;
 z-index:9999;
+padding:20px;
 }
 
 .popup-box{
 background:white;
-padding:25px;
-width:320px;
-border-radius:12px;
+padding:35px;
+width:100%;
+max-width:420px;
+border-radius:18px;
 }
 
 .popup-box h3{
-margin-bottom:15px;
+margin-bottom:20px;
+font-size:28px;
+text-align:center;
 }
 
 .popup-box input,
 .popup-box textarea{
 width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:6px;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
 font-family:Poppins;
 }
 
 .popup-box button{
 width:100%;
-padding:12px;
+padding:14px;
 background:#d4af37;
 border:none;
-border-radius:6px;
+border-radius:8px;
 color:white;
+font-size:16px;
 cursor:pointer;
 }
 
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:22px;
+right:22px;
 background:#25D366;
-color:white;
-padding:16px;
+width:62px;
+height:62px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
-font-size:22px;
+font-size:28px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+color:white;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+z-index:999;
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
 
 nav{
-padding:15px 20px;
+padding:16px 20px;
 flex-direction:column;
-gap:10px;
+gap:15px;
+}
+
+nav ul{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .hero h1{
-font-size:34px;
+font-size:42px;
 }
 
 .hero p{
-font-size:15px;
+font-size:16px;
 }
 
-.video-box video{
-height:280px;
+.section-title h2{
+font-size:34px;
 }
 
-.section h2{
-font-size:28px;
+.video-wrapper video{
+height:320px;
 }
 
 }
@@ -352,6 +541,7 @@ font-size:28px;
 <body>
 
 <!-- NAVBAR -->
+
 <nav>
 
 <div class="logo">
@@ -361,6 +551,7 @@ font-size:28px;
 
 <ul>
 <li onclick="go('products')">Products</li>
+<li onclick="go('advantage')">Why Us</li>
 <li onclick="go('contact')">Contact</li>
 <li onclick="openPopup()">Quote</li>
 </ul>
@@ -368,82 +559,173 @@ font-size:28px;
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+
+<section class="hero">
 
 <video autoplay muted loop playsinline>
 <source src="maize-harvest.mp4" type="video/mp4">
 </video>
 
 <div class="hero-content">
-<h1>Direct from Farmers.<br>Exported Worldwide.</h1>
+
+<h1>
+Direct from Farmers.<br>
+Exported Worldwide.
+</h1>
 
 <p>
-Trusted supplier of premium Rice & Maize from India
+Trusted agricultural export company from India supplying premium Rice and Yellow Maize to international buyers with reliable quality and bulk shipment capability.
 </p>
 
-<button onclick="go('products')">
+<div class="hero-buttons">
+
+<button class="primary-btn" onclick="go('products')">
 Explore Products
+</button>
+
+<button class="secondary-btn" onclick="openPopup()">
+Request Quote
 </button>
 
 </div>
 
 </div>
 
+</section>
+
 <!-- INFO -->
-<div class="info">
-<div>MOQ: 25 MT</div>
-<div>20FT / 40FT Containers</div>
-<div>LC / TT Payment</div>
+
+<div class="info-strip">
+
+<div class="info-container">
+
+<div class="info-box">
+<h3>MOQ 25 MT</h3>
+<p>Flexible bulk supply for international buyers.</p>
+</div>
+
+<div class="info-box">
+<h3>20FT / 40FT Containers</h3>
+<p>Efficient export logistics and container handling.</p>
+</div>
+
+<div class="info-box">
+<h3>LC / TT Payment</h3>
+<p>Secure international payment methods accepted.</p>
+</div>
+
+<div class="info-box">
+<h3>Direct Procurement</h3>
+<p>Sourced directly from farmers for better quality.</p>
+</div>
+
+</div>
+
 </div>
 
 <!-- PRODUCTS -->
-<div id="products" class="section">
+
+<section id="products" class="section">
+
+<div class="container">
+
+<div class="section-title">
 
 <h2>Our Products</h2>
 
 <p>
-Premium agricultural commodities sourced directly from farmers
-and supplied to international buyers with consistent quality.
+We supply export-grade agricultural commodities sourced directly from trusted farming networks across India.
 </p>
+
+</div>
 
 <div class="products">
 
-<div class="card">
-<img src="rice.jpeg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg'">
+<!-- RICE -->
 
-<div class="card-body">
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="rice.jpeg"
+onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg'">
+
+<div class="product-overlay">
+Export Quality
+</div>
+
+</div>
+
+<div class="product-content">
+
 <h3>Sona Masoori Rice</h3>
 
 <p>
-Lightweight, aromatic and export-quality rice
-sourced directly from trusted farming networks.
+Premium lightweight and aromatic rice suitable for global export markets with excellent cooking quality and consistency.
 </p>
-</div>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
 </div>
 
-<div class="card">
-<img src="Maize.jpeg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg'">
+</div>
 
-<div class="card-body">
+<!-- MAIZE -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="Maize.jpeg"
+onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg'">
+
+<div class="product-overlay">
+Bulk Supply
+</div>
+
+</div>
+
+<div class="product-content">
+
 <h3>Yellow Maize</h3>
 
 <p>
-High-quality dried maize suitable for feed,
-industrial and international export markets.
+High-quality dried maize suitable for feed, industrial and international export applications with controlled moisture.
 </p>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
 </div>
+
 </div>
 
 </div>
 
 </div>
+
+</section>
 
 <!-- VIDEO -->
-<div class="section">
+
+<section class="section video-section">
+
+<div class="container">
+
+<div class="section-title">
 
 <h2>Harvesting Process</h2>
 
-<div class="video-box">
+<p>
+Real field-level harvesting and sourcing operations directly from local farming communities.
+</p>
+
+</div>
+
+<div class="video-wrapper">
 
 <video controls autoplay muted loop>
 <source src="maize-harvest.mp4" type="video/mp4">
@@ -453,27 +735,126 @@ industrial and international export markets.
 
 </div>
 
-<!-- CONTACT -->
-<div id="contact" class="contact">
+</section>
 
-<h2>Contact Us</h2>
+<!-- ADVANTAGE -->
 
-<p>+91 XXXXXXXXXX</p>
+<section id="advantage" class="section">
 
-<p>info@dhanyaglobalexports.com</p>
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Buyers Choose Us</h2>
 
 <p>
-Registered Agricultural Exporter | Direct Farmer Procurement
+Our procurement model and export process are built for reliability, quality and long-term partnerships.
 </p>
 
 </div>
 
+<div class="advantage-grid">
+
+<div class="adv-card">
+
+<div class="adv-icon">🤝</div>
+
+<h3>Direct from Farmers</h3>
+
+<p>
+We procure directly from local farming networks ensuring transparency and better quality control.
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">📦</div>
+
+<h3>Bulk Export Supply</h3>
+
+<p>
+Capable of handling large-scale international export orders with efficient shipment planning.
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">🌍</div>
+
+<h3>Global Market Focus</h3>
+
+<p>
+Supplying international buyers across Middle East, Africa and Southeast Asia.
+</p>
+
+</div>
+
+<div class="adv-card">
+
+<div class="adv-icon">📅</div>
+
+<h3>Advance Crop Booking</h3>
+
+<p>
+Buyers can reserve crops before harvest to ensure supply security and stable pricing.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>Contact Information</h3>
+
+<p>
++91 XXXXXXXXXX<br>
+info@dhanyaglobalexports.com<br>
+India
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Business Profile</h3>
+
+<p>
+Registered Agricultural Exporter<br>
+Direct Farmer Procurement<br>
+Bulk International Supply<br>
+APEDA & IEC Certified
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- FOOTER -->
+
 <footer>
 
-<p>Dhanya Global Exports</p>
+<h3>Dhanya Global Exports</h3>
 
-<div class="cert">
+<p>
+Premium Agricultural Export Company from India
+</p>
+
+<div class="certifications">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/APEDA_logo.png/320px-APEDA_logo.png">
 
@@ -484,19 +865,20 @@ Registered Agricultural Exporter | Direct Farmer Procurement
 </footer>
 
 <!-- POPUP -->
+
 <div class="popup" id="popup">
 
 <div class="popup-box">
 
 <h3>Request Quote</h3>
 
-<input placeholder="Name">
+<input type="text" placeholder="Name">
 
-<input placeholder="Email">
+<input type="email" placeholder="Email">
 
-<input placeholder="Country">
+<input type="text" placeholder="Country">
 
-<textarea placeholder="Product & Quantity"></textarea>
+<textarea rows="5" placeholder="Product & Quantity"></textarea>
 
 <button onclick="closePopup()">
 Submit Inquiry
@@ -507,8 +889,10 @@ Submit Inquiry
 </div>
 
 <!-- WHATSAPP -->
+
 <a class="whatsapp"
-href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products">
+href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products"
+target="_blank">
 💬
 </a>
 
