@@ -5,130 +5,388 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhanya Global Exports</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins;background:#f5f5f5;color:#1f5f2c}
 
-/* NAV */
-nav{
-background:#1f5f2c;color:white;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
-.logo{display:flex;gap:10px;align-items:center}
-.logo-icon{color:#d4af37;font-weight:bold;font-size:22px}
-nav ul{display:flex;gap:20px;list-style:none}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f7f7f7;
+color:#1f5f2c;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+background:#1f5f2c;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 50px;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+font-weight:600;
+font-size:20px;
+}
+
+.logo-icon{
+color:#d4af37;
+font-size:24px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav li{
+color:white;
+cursor:pointer;
+transition:.3s;
+font-size:15px;
+}
+
+nav li:hover{
+color:#d4af37;
+}
 
 /* HERO */
 .hero{
-position:relative;height:550px;color:white;
-display:flex;align-items:center;justify-content:center;text-align:center
-}
-.hero video{
-position:absolute;width:100%;height:100%;object-fit:cover
-}
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,.6)
-}
-.hero-content{position:relative;z-index:2}
-.hero h1{font-size:42px}
-.hero p{margin-top:10px}
-.hero button{
-margin-top:20px;padding:12px 25px;
-background:#d4af37;color:white;border:none;border-radius:6px;
-cursor:pointer
+position:relative;
+height:600px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+color:white;
 }
 
-/* INFO */
-.info{
-display:flex;gap:20px;justify-content:center;
-margin-top:-50px;flex-wrap:wrap
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
 }
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:52px;
+line-height:1.2;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:14px 30px;
+background:#d4af37;
+border:none;
+border-radius:6px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:translateY(-3px);
+background:#c59d28;
+}
+
+/* INFO STRIP */
+.info{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:-50px;
+position:relative;
+z-index:5;
+padding:0 20px;
+}
+
 .info div{
-background:white;padding:15px 25px;border-radius:10px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1)
+background:white;
+padding:18px 28px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+font-weight:500;
 }
 
 /* SECTION */
-.section{padding:60px 20px;text-align:center}
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.section p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
 
 /* PRODUCTS */
-.products{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.card{
-background:white;width:280px;border-radius:10px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-overflow:hidden
+.products{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
 }
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:15px}
+
+.card{
+background:white;
+width:320px;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.card-body{
+padding:20px;
+}
+
+.card-body h3{
+margin-bottom:10px;
+font-size:22px;
+}
+
+.card-body p{
+font-size:14px;
+line-height:1.7;
+}
 
 /* VIDEO */
 .video-box{
-max-width:900px;margin:auto;
-border-radius:10px;overflow:hidden
+max-width:1000px;
+margin:40px auto;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
+
 .video-box video{
-width:100%;height:400px;object-fit:cover
+width:100%;
+height:500px;
+object-fit:cover;
 }
 
 /* CONTACT */
 .contact{
-background:#1f5f2c;color:white;padding:50px;text-align:center
+background:#1f5f2c;
+color:white;
+padding:70px 20px;
+text-align:center;
+}
+
+.contact h2{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.contact p{
+margin-top:10px;
+font-size:16px;
 }
 
 /* FOOTER */
-footer{background:#222;color:white;text-align:center;padding:25px}
-.cert img{height:40px;margin:10px;background:white;padding:5px;border-radius:6px}
+footer{
+background:#161616;
+color:white;
+text-align:center;
+padding:35px 20px;
+}
+
+.cert{
+margin-top:20px;
+}
+
+.cert img{
+height:45px;
+margin:10px;
+background:white;
+padding:6px;
+border-radius:8px;
+}
 
 /* POPUP */
 .popup{
-display:none;position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;align-items:center;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+justify-content:center;
+align-items:center;
+z-index:9999;
 }
+
 .popup-box{
-background:white;padding:20px;border-radius:10px;width:300px
+background:white;
+padding:25px;
+width:320px;
+border-radius:12px;
 }
-input,textarea{width:100%;padding:10px;margin:8px 0}
-button{padding:10px 20px;background:#d4af37;color:white;border:none}
+
+.popup-box h3{
+margin-bottom:15px;
+}
+
+.popup-box input,
+.popup-box textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:6px;
+font-family:Poppins;
+}
+
+.popup-box button{
+width:100%;
+padding:12px;
+background:#d4af37;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;padding:15px;border-radius:50%
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:16px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+padding:15px 20px;
+flex-direction:column;
+gap:10px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.video-box video{
+height:280px;
+}
+
+.section h2{
+font-size:28px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
+
 <div class="logo">
 <div class="logo-icon">DGE 🌍</div>
 <div>Dhanya Global Exports</div>
 </div>
+
 <ul>
 <li onclick="go('products')">Products</li>
+<li onclick="go('contact')">Contact</li>
 <li onclick="openPopup()">Quote</li>
 </ul>
+
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+
 <video autoplay muted loop playsinline>
-<source src="maize-harvest.mp4">
+<source src="maize-harvest.mp4" type="video/mp4">
 </video>
 
 <div class="hero-content">
-<h1>Direct from Farmers. Exported Worldwide.</h1>
-<p>Trusted supplier of Rice & Maize from India</p>
-<button onclick="go('products')">Explore Products</button>
+<h1>Direct from Farmers.<br>Exported Worldwide.</h1>
+
+<p>
+Trusted supplier of premium Rice & Maize from India
+</p>
+
+<button onclick="go('products')">
+Explore Products
+</button>
+
 </div>
+
 </div>
 
 <!-- INFO -->
@@ -140,79 +398,137 @@ background:#25D366;color:white;padding:15px;border-radius:50%
 
 <!-- PRODUCTS -->
 <div id="products" class="section">
+
 <h2>Our Products</h2>
+
+<p>
+Premium agricultural commodities sourced directly from farmers
+and supplied to international buyers with consistent quality.
+</p>
 
 <div class="products">
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpeg">
+<img src="rice.jpeg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/68/White_rice.jpg'">
+
 <div class="card-body">
 <h3>Sona Masoori Rice</h3>
-<p>Premium export quality rice sourced directly from farmers.</p>
+
+<p>
+Lightweight, aromatic and export-quality rice
+sourced directly from trusted farming networks.
+</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpeg">
+<img src="Maize.jpeg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Maize.jpg'">
+
 <div class="card-body">
 <h3>Yellow Maize</h3>
-<p>High-quality dried maize suitable for global export markets.</p>
+
+<p>
+High-quality dried maize suitable for feed,
+industrial and international export markets.
+</p>
 </div>
 </div>
 
 </div>
+
 </div>
 
 <!-- VIDEO -->
 <div class="section">
+
 <h2>Harvesting Process</h2>
+
 <div class="video-box">
+
 <video controls autoplay muted loop>
-<source src="maize-harvest.mp4">
+<source src="maize-harvest.mp4" type="video/mp4">
 </video>
+
 </div>
+
 </div>
 
 <!-- CONTACT -->
-<div class="contact">
+<div id="contact" class="contact">
+
 <h2>Contact Us</h2>
-<p>+91 xxxxxxxxx</p>
+
+<p>+91 XXXXXXXXXX</p>
+
 <p>info@dhanyaglobalexports.com</p>
-<p>Registered Agricultural Exporter | Direct Farmer Procurement</p>
+
+<p>
+Registered Agricultural Exporter | Direct Farmer Procurement
+</p>
+
 </div>
 
 <!-- FOOTER -->
 <footer>
+
 <p>Dhanya Global Exports</p>
+
 <div class="cert">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/APEDA_logo.png/320px-APEDA_logo.png">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/IEC_India_logo.png/320px-IEC_India_logo.png">
+
 </div>
+
 </footer>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
+
 <div class="popup-box">
+
 <h3>Request Quote</h3>
+
 <input placeholder="Name">
+
 <input placeholder="Email">
+
 <input placeholder="Country">
+
 <textarea placeholder="Product & Quantity"></textarea>
-<button onclick="closePopup()">Submit</button>
-</div>
+
+<button onclick="closePopup()">
+Submit Inquiry
+</button>
+
 </div>
 
-<a class="whatsapp" href="https://wa.me/916309281897">💬</a>
+</div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp"
+href="https://wa.me/916309281897?text=Hello%20I%20am%20interested%20in%20your%20products">
+💬
+</a>
 
 <script>
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+function go(id){
+document.getElementById(id)
+.scrollIntoView({behavior:'smooth'});
+}
 
 function openPopup(){
-document.getElementById("popup").style.display="flex";
+document.getElementById("popup")
+.style.display="flex";
 }
+
 function closePopup(){
-document.getElementById("popup").style.display="none";
+document.getElementById("popup")
+.style.display="none";
 }
+
 </script>
 
 </body>
