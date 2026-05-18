@@ -346,7 +346,14 @@ nav ul{gap:18px;flex-wrap:wrap;justify-content:center;}
 
 <script>
 function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-function openPopup(){document.getElementById('popup').style.display='flex';}
+function openPopup(){
+
+document.getElementById('riceModal').style.display='none';
+
+document.getElementById('maizeModal').style.display='none';
+
+document.getElementById('popup').style.display='flex';
+}
 function submitForm(){alert('Enquiry Submitted Successfully');document.getElementById('popup').style.display='none';}
 function openRiceModal(){document.getElementById('riceModal').style.display='flex';}
 function openMaizeModal(){document.getElementById('maizeModal').style.display='flex';}
